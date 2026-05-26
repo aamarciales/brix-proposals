@@ -715,10 +715,11 @@
             const hash = location.hash.slice(1);
             const state = {};
             if (!hash) return state;
+            const keyMap = { r: 'realizar', g: 'guardar', d: 'descartar' };
             hash.split('|').forEach(seg => {
                 const [key, ids] = seg.split(':');
-                if (key && ids) {
-                    ids.split(',').forEach(i => { state[i] = key; });
+                if (key && ids && keyMap[key]) {
+                    ids.split(',').forEach(i => { state[i] = keyMap[key]; });
                 }
             });
             return state;
