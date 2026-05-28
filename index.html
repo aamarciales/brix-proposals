@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Article Proposals | 2026-05-26</title>
+    <title>Approved Articles | Batch 2026-05-28</title>
     <link rel="icon" type="image/svg+xml" href="https://apps.brixtemplates.com/article-builder/assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,8 +62,12 @@
             background: var(--color-accent-200);
             color: var(--color-accent-dark);
         }
+        .pill-status {
+            background: #dcfce7;
+            color: #166534;
+        }
         .proposal-justification {
-            padding: 16px 24px 12px;
+            padding: 16px 24px 20px;
             font-size: 13px;
             color: var(--color-gray-700);
             line-height: 1.65;
@@ -72,103 +76,48 @@
             font-weight: 600;
             color: var(--color-primary);
         }
-
-        /* Decision bar — 3 buttons */
-        .decision-bar {
+        .filter-bar {
             display: flex;
-            gap: 0;
-            padding: 0 24px 18px;
+            gap: 8px;
+            padding: 16px 24px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--color-gray-200);
+            background: var(--color-surface);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        .decision-btn {
-            flex: 1;
-            font-family: 'Figtree', sans-serif;
+        .filter-btn {
             font-size: 12px;
             font-weight: 600;
-            padding: 8px 4px;
+            padding: 5px 14px;
+            border-radius: var(--radius-pill);
             border: 1px solid var(--color-gray-200);
             background: var(--color-surface);
-            color: var(--color-gray-500);
+            color: var(--color-gray-600);
             cursor: pointer;
             transition: all 0.15s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
         }
-        .decision-btn:first-child { border-radius: 8px 0 0 8px; }
-        .decision-btn:last-child { border-radius: 0 8px 8px 0; }
-        .decision-btn:not(:last-child) { border-right: none; }
-
-        .decision-btn:hover { background: var(--color-gray-100); }
-
-        .decision-btn.active-realizar {
-            background: #dcfce7;
-            color: #166534;
-            border-color: #86efac;
-        }
-        .decision-btn.active-guardar {
-            background: #fef9c3;
-            color: #854d0e;
-            border-color: #fde047;
-        }
-        .decision-btn.active-descartar {
-            background: #fee2e2;
-            color: #991b1b;
-            border-color: #fca5a5;
-        }
-
-        /* Block state borders */
-        .suggestion-block.state-realizar { border-left: 4px solid #22c55e; }
-        .suggestion-block.state-guardar  { border-left: 4px solid #eab308; }
-        .suggestion-block.state-descartar { border-left: 4px solid #ef4444; opacity: 0.6; }
-
-        /* Actions bar */
-        .actions-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .actions-counts {
-            display: flex;
-            gap: 16px;
-            font-size: 13px;
-        }
-        .count-item { display: flex; align-items: center; gap: 4px; }
-        .count-dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .count-dot.realizar { background: #22c55e; }
-        .count-dot.guardar  { background: #eab308; }
-        .count-dot.descartar { background: #ef4444; }
-        .count-dot.pendiente { background: #d1d5db; }
-
-        .btn-share-link, .btn-copy-text {
-            font-family: 'Figtree', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.15s ease;
-        }
-        .btn-share-link {
+        .filter-btn:hover { background: var(--color-gray-100); }
+        .filter-btn.active {
             background: var(--color-primary);
             color: #fff;
+            border-color: var(--color-primary);
         }
-        .btn-share-link:hover { opacity: 0.9; }
-        .btn-copy-text {
-            background: var(--color-gray-100);
-            color: var(--color-gray-700);
-            border: 1px solid var(--color-gray-200);
+        .suggestion-block.hidden { display: none; }
+        .stats-bar {
+            display: flex;
+            gap: 16px;
+            padding: 16px 24px;
+            flex-wrap: wrap;
         }
-        .btn-copy-text:hover { background: var(--color-gray-200); }
+        .stat-item {
+            font-size: 13px;
+            color: var(--color-gray-600);
+        }
+        .stat-item strong {
+            color: var(--color-primary);
+        }
     </style>
 </head>
 <body>
@@ -177,683 +126,260 @@
         <img src="https://apps.brixtemplates.com/article-builder/assets/favicon.svg" alt="BRIX Templates" class="logo-icon">
         <div class="logo">Article Researcher</div>
         <div class="logo-divider"></div>
-        <div class="logo-subtext">New article proposals for BRIX Templates</div>
+        <div class="logo-subtext">10 approved articles — Batch 2026-05-28</div>
     </div></div></div>
 
     <div class="content-area">
 
         <div class="about-card">
-            <h1>Article Proposals — Batch 2026-05-26</h1>
-            <p class="subtitle">Para cada propuesta, elige una acción: <strong>Realizar</strong> (aprobar), <strong>Guardar luego</strong> (revisar despu&eacute;s), o <strong>Descartar</strong> (rechazar). Tus elecciones se guardan en la URL — c&oacute;piala y comp&aacute;rtela.</p>
-            <span class="suggestion-count"><i class="bi bi-lightbulb"></i> 20 proposed articles</span>
+            <h1>Approved Articles — Batch 2026-05-28</h1>
+            <p class="subtitle">10 articles approved across 3 rounds. Pending research + outlines.</p>
+            <div class="stats-bar">
+                <span class="stat-item"><i class="bi bi-check-circle-fill" style="color:#166534"></i> <strong>10</strong> approved</span>
+                <span class="stat-item"><i class="bi bi-x-circle-fill" style="color:#991b1b"></i> <strong>8</strong> rejected</span>
+                <span class="stat-item"><i class="bi bi-framer"></i> <strong>6</strong> framer</span>
+                <span class="stat-item"><i class="bi bi-globe2"></i> <strong>4</strong> webflow</span>
+            </div>
         </div>
 
-        <div class="section-label"><i class="bi bi-lightbulb"></i> Proposed Articles</div>
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Todos (10)</button>
+            <button class="filter-btn" data-filter="framer">Framer (6)</button>
+            <button class="filter-btn" data-filter="webflow">Webflow (4)</button>
+        </div>
 
-        <!-- PROPOSAL 1 -->
-        <div class="suggestion-block" data-index="1" data-slug="how-to-create-a-dark-mode-toggle-in-framer">
+        <div class="section-label"><i class="bi bi-check2-circle"></i> Approved Articles</div>
+
+        <!-- #1 -->
+        <div class="suggestion-block" data-platform="framer">
             <div class="suggestion-header">
                 <span class="suggestion-number">#1</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Create a Dark Mode Toggle in Framer</div>
-                <div class="proposal-title-es">Cómo crear un toggle de dark mode en Framer</div>
+                <div class="proposal-title-en">How to Connect Framer Forms to Mailchimp</div>
+                <div class="proposal-title-es">Cómo conectar formularios de Framer a Mailchimp</div>
             </div>
-            <div class="proposal-slug">how-to-create-a-dark-mode-toggle-in-framer</div>
+            <div class="proposal-slug">how-to-connect-framer-forms-to-mailchimp</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 1</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> El blog ya cubre cómo crear un toggle de dark/light mode en Webflow, pero no existe un equivalente para Framer. Muchos diseñadores buscan esta funcionalidad en Framer y actualmente no hay una guía en nuestro blog que les ayude. Es un tutorial práctico con alto potencial de búsqueda orgánica.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> El blog tiene "How to integrate Webflow forms with Mailchimp" pero no el equivalente para Framer. Webhook setup, mapeo de campos, doble opt-in, troubleshooting cuando leads no llegan.
             </div>
         </div>
 
-        <!-- PROPOSAL 2 -->
-        <div class="suggestion-block" data-index="2" data-slug="how-to-build-a-job-board-with-webflow-cms">
+        <!-- #2 -->
+        <div class="suggestion-block" data-platform="webflow">
             <div class="suggestion-header">
                 <span class="suggestion-number">#2</span>
                 <span class="suggestion-location">tutorial · webflow</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Build a Job Board with Webflow CMS</div>
-                <div class="proposal-title-es">Cómo construir un job board con Webflow CMS</div>
+                <div class="proposal-title-en">How to Use Component Props in Webflow Custom Code Embeds</div>
+                <div class="proposal-title-es">Cómo usar props de componentes en embeds de código custom de Webflow</div>
             </div>
-            <div class="proposal-slug">how-to-build-a-job-board-with-webflow-cms</div>
+            <div class="proposal-slug">how-to-use-component-props-in-webflow-custom-code-embeds</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">webflow</span>
+                <span class="pill pill-status">Round 1</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Los job boards son uno de los casos de uso más solicitados del CMS de Webflow. No tenemos ningún artículo dedicado a este tipo de proyecto y hay búsquedas recurrentes en la comunidad. Aprovecha bien las colecciones, filtros y plantillas CMS que ya cubrimos en otros tutoriales.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> Webflow acaba de habilitar props y datos dinámicos en Code Embed elements. Feature completamente nueva sin cobertura. Cambia cómo se construyen componentes interactivos (mapas, charts, iframes).
             </div>
         </div>
 
-        <!-- PROPOSAL 3 -->
-        <div class="suggestion-block" data-index="3" data-slug="how-to-add-next-and-previous-post-links-in-framer-cms">
+        <!-- #3 -->
+        <div class="suggestion-block" data-platform="framer">
             <div class="suggestion-header">
                 <span class="suggestion-number">#3</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Add Next and Previous Post Links in Framer CMS</div>
-                <div class="proposal-title-es">Cómo agregar enlaces de post siguiente y anterior en Framer CMS</div>
+                <div class="proposal-title-en">How to Inline-Edit and Bulk-Edit Framer CMS Items in the New Table View</div>
+                <div class="proposal-title-es">Cómo editar inline y en bulk items CMS de Framer en la nueva vista de tabla</div>
             </div>
-            <div class="proposal-slug">how-to-add-next-and-previous-post-links-in-framer-cms</div>
+            <div class="proposal-slug">how-to-inline-edit-and-bulk-edit-framer-cms-items-in-table-view</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 1</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Webflow ya tiene un tutorial sobre next/prev navigation, pero Framer no. La navegación entre posts es fundamental para cualquier blog funcional y este artículo llenaría un gap claro en nuestra cobertura de Framer CMS.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> CMS 3.0 rediseñó completamente el CMS con inline editing, multi-cell selection, bulk actions. El artículo existente de bulk edit cubre el método viejo. Este cubre el nuevo workflow.
             </div>
         </div>
 
-        <!-- PROPOSAL 4 -->
-        <div class="suggestion-block" data-index="4" data-slug="how-to-set-up-cookie-consent-on-your-framer-site">
+        <!-- #4 -->
+        <div class="suggestion-block" data-platform="webflow">
             <div class="suggestion-header">
                 <span class="suggestion-number">#4</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Set Up Cookie Consent on Your Framer Site</div>
-                <div class="proposal-title-es">Cómo configurar el consentimiento de cookies en tu sitio de Framer</div>
-            </div>
-            <div class="proposal-slug">how-to-set-up-cookie-consent-on-your-framer-site</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Ya cubrimos cómo agregar un banner de cookies en Webflow, pero no en Framer. Con la creciente regulación de privacidad (GDPR, DSA), este tutorial es cada vez más buscado por agencias que publican sitios en Framer para clientes europeos.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 5 -->
-        <div class="suggestion-block" data-index="5" data-slug="how-to-build-a-directory-website-with-webflow-cms">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#5</span>
                 <span class="suggestion-location">tutorial · webflow</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Build a Directory Website with Webflow CMS</div>
-                <div class="proposal-title-es">Cómo construir un sitio directorio con Webflow CMS</div>
+                <div class="proposal-title-en">How to Make Your Webflow Site Appear in AI Search Results</div>
+                <div class="proposal-title-es">Cómo hacer que tu sitio Webflow aparezca en resultados de búsqueda de IA</div>
             </div>
-            <div class="proposal-slug">how-to-build-a-directory-website-with-webflow-cms</div>
+            <div class="proposal-slug">how-to-make-your-webflow-site-appear-in-ai-search-results</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">webflow</span>
+                <span class="pill pill-status">Round 1</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Los directorios son otro proyecto recurrente con Webflow CMS que no está cubierto. Complementa nuestro artículo de real estate listings y el e-commerce que ya tenemos. Hay búsquedas significativas alrededor de "Webflow directory" en la comunidad y foros.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> Webflow acaba de lanzar AEO para Enterprise, pero todos los planes pueden optimizar para IA. El blog tiene el artículo de llms.txt pero falta uno que cubra el panorama completo: ChatGPT, Perplexity, Gemini, structured data, contenido machine-readable.
             </div>
         </div>
 
-        <!-- PROPOSAL 6 -->
-        <div class="suggestion-block" data-index="6" data-slug="how-to-add-animated-number-counters-to-your-framer-site">
+        <!-- #5 -->
+        <div class="suggestion-block" data-platform="framer">
+            <div class="suggestion-header">
+                <span class="suggestion-number">#5</span>
+                <span class="suggestion-location">tutorial · framer</span>
+            </div>
+            <div class="proposal-titles">
+                <div class="proposal-title-en">How to Build a Custom 404 Page in Framer That Protects Your SEO</div>
+                <div class="proposal-title-es">Cómo crear una página 404 custom en Framer que proteja tu SEO</div>
+            </div>
+            <div class="proposal-slug">how-to-build-a-custom-404-page-in-framer-that-protects-your-seo</div>
+            <div class="proposal-meta">
+                <span class="pill pill-type">tutorial</span>
+                <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 1</span>
+            </div>
+            <div class="proposal-justification">
+                <strong>Gap:</strong> No existe ningún artículo sobre páginas 404 en Framer. El blog tiene wildcard redirects y unindex pages, pero nada sobre diseñar y configurar una 404 que mantenga al usuario y proteja link equity. Soft 404s, monitoreo en GSC.
+            </div>
+        </div>
+
+        <!-- #6 -->
+        <div class="suggestion-block" data-platform="framer">
             <div class="suggestion-header">
                 <span class="suggestion-number">#6</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Add Animated Number Counters to Your Framer Site</div>
-                <div class="proposal-title-es">Cómo agregar contadores animados de números a tu sitio de Framer</div>
+                <div class="proposal-title-en">How to Sync Framer CMS with Notion Using the Official Plugin</div>
+                <div class="proposal-title-es">Cómo sincronizar el CMS de Framer con Notion usando el plugin oficial</div>
             </div>
-            <div class="proposal-slug">how-to-add-animated-number-counters-to-your-framer-site</div>
+            <div class="proposal-slug">how-to-sync-framer-cms-with-notion-using-the-official-plugin</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 2</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Ya existe un tutorial de contadores animados para Webflow. Framer tiene un sistema de animación diferente y motion values que permiten crear este efecto nativamente, pero no hay guía en nuestro blog. Es un efecto muy pedido en landing pages SaaS y de startups.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> El blog tiene "How to connect Framer forms to Notion" (formularios) pero no CMS sync. Son cosas distintas: forms → Notion es una integración de formularios; CMS sync es usar Notion como backend de contenido. Plugin oficial con 22K usuarios.
             </div>
         </div>
 
-        <!-- PROPOSAL 7 -->
-        <div class="suggestion-block" data-index="7" data-slug="how-to-create-an-rss-feed-for-your-framer-cms-blog">
+        <!-- #7 -->
+        <div class="suggestion-block" data-platform="framer">
             <div class="suggestion-header">
                 <span class="suggestion-number">#7</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Create an RSS Feed for Your Framer CMS Blog</div>
-                <div class="proposal-title-es">Cómo crear un feed RSS para tu blog de Framer CMS</div>
+                <div class="proposal-title-en">How to Add Dynamic SEO Titles and Meta Descriptions to Framer CMS Pages</div>
+                <div class="proposal-title-es">Cómo agregar títulos SEO y meta descriptions dinámicos a páginas CMS de Framer</div>
             </div>
-            <div class="proposal-slug">how-to-create-an-rss-feed-for-your-framer-cms-blog</div>
+            <div class="proposal-slug">how-to-add-dynamic-seo-titles-and-meta-descriptions-to-framer-cms-pages</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 2</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Tenemos un tutorial de RSS para Webflow pero no para Framer. Los feeds RSS siguen siendo relevantes para distribución de contenido y newsletter automation. Es un gap directo que se puede cubrir con un tutorial práctico basado en la API de Framer.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> Framer agregó CMS Variables que permiten campos dinámicos en page title, meta description y custom code (JSON-LD). Feature nueva sin tutorial. Por default todas las CMS pages tienen el mismo meta genérico = terrible para SEO.
             </div>
         </div>
 
-        <!-- PROPOSAL 8 -->
-        <div class="suggestion-block" data-index="8" data-slug="how-to-build-a-pricing-toggle-monthly-yearly-in-framer">
+        <!-- #8 -->
+        <div class="suggestion-block" data-platform="webflow">
             <div class="suggestion-header">
                 <span class="suggestion-number">#8</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Build a Pricing Toggle (Monthly/Yearly) in Framer</div>
-                <div class="proposal-title-es">Cómo construir un toggle de precios (mensual/anual) en Framer</div>
-            </div>
-            <div class="proposal-slug">how-to-build-a-pricing-toggle-monthly-yearly-in-framer</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Los toggles de pricing son uno de los componentes más usados en landing pages SaaS. Webflow ya tiene cobertura de esto en nuestro blog pero Framer no. Es un tutorial corto, práctico y con alto volumen de búsqueda que complementa bien nuestra sección de Framer.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 9 -->
-        <div class="suggestion-block" data-index="9" data-slug="webflow-vs-framer-for-portfolios-which-platform-showcases-creative-work-better">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#9</span>
-                <span class="suggestion-location">comparison · cross-platform</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Webflow vs Framer for Portfolios: Which Platform Showcases Creative Work Better?</div>
-                <div class="proposal-title-es">Webflow vs Framer para portafolios: ¿qué plataforma muestra mejor el trabajo creativo?</div>
-            </div>
-            <div class="proposal-slug">webflow-vs-framer-for-portfolios-which-platform-showcases-creative-work-better</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">comparison</span>
-                <span class="pill pill-platform">cross-platform</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Tenemos comparaciones Webflow vs Framer generales y para agencias, pero ninguna enfocada específicamente en portafolios de creativos. Es un ángulo diferente que atrae a un segmento grande de la audiencia de ambas plataformas y tiene potencial de posicionamiento para búsquedas de "best portfolio builder".
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 10 -->
-        <div class="suggestion-block" data-index="10" data-slug="webflow-vs-shopify-which-is-better-for-your-online-store">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#10</span>
-                <span class="suggestion-location">comparison · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Webflow vs Shopify: Which Is Better for Your Online Store?</div>
-                <div class="proposal-title-es">Webflow vs Shopify: ¿cuál es mejor para tu tienda online?</div>
-            </div>
-            <div class="proposal-slug">webflow-vs-shopify-which-is-better-for-your-online-store</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">comparison</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> El blog compara Webflow con WordPress, Wix, Squarespace, HubSpot y Contentful, pero falta Shopify, que es el competidor directo en e-commerce. Este artículo captura tráfico de alto intent para uno de los temas más buscados en la comunidad Webflow.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 11 -->
-        <div class="suggestion-block" data-index="11" data-slug="framer-vs-squarespace-which-platform-is-right-for-your-website">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#11</span>
-                <span class="suggestion-location">comparison · cross-platform</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Framer vs Squarespace: Which Platform Is Right for Your Website?</div>
-                <div class="proposal-title-es">Framer vs Squarespace: ¿qué plataforma es la correcta para tu sitio web?</div>
-            </div>
-            <div class="proposal-slug">framer-vs-squarespace-which-platform-is-right-for-your-website</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">comparison</span>
-                <span class="pill pill-platform">cross-platform</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Existe una comparación Webflow vs Squarespace pero no Framer vs Squarespace. Muchos diseñadores que usan Squarespace están considerando Framer como alternativa moderna. Este artículo captura tráfico de un segmento no cubierto con potencial de conversión.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 12 -->
-        <div class="suggestion-block" data-index="12" data-slug="framer-vs-wix-which-platform-is-better-for-your-website">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#12</span>
-                <span class="suggestion-location">comparison · cross-platform</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Framer vs Wix: Which Platform Is Better for Your Website?</div>
-                <div class="proposal-title-es">Framer vs Wix: ¿qué plataforma es mejor para tu sitio web?</div>
-            </div>
-            <div class="proposal-slug">framer-vs-wix-which-platform-is-better-for-your-website</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">comparison</span>
-                <span class="pill pill-platform">cross-platform</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Tenemos Webflow vs Wix pero no Framer vs Wix. Wix tiene una base enorme de usuarios que podrían estar evaluando migrar a Framer. Es una comparación que no aparece en nuestro blog y que tiene potencial de búsqueda considerable.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 13 -->
-        <div class="suggestion-block" data-index="13" data-slug="webflow-accessibility-guide-how-to-build-wcag-compliant-sites">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#13</span>
-                <span class="suggestion-location">guide · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Webflow Accessibility Guide: How to Build WCAG-Compliant Sites</div>
-                <div class="proposal-title-es">Guía de accesibilidad en Webflow: cómo construir sitios compatibles con WCAG</div>
-            </div>
-            <div class="proposal-slug">webflow-accessibility-guide-how-to-build-wcag-compliant-sites</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">guide</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> No tenemos una guía dedicada a accesibilidad en Webflow. Es un tema cada vez más importante por regulaciones como la European Accessibility Act de 2026. Una guía completa cubriría ARIA, navegación por teclado, contraste y alt text dentro del contexto específico de Webflow.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 14 -->
-        <div class="suggestion-block" data-index="14" data-slug="the-complete-guide-to-webflow-components-props-variants-and-reusable-design">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#14</span>
-                <span class="suggestion-location">guide · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">The Complete Guide to Webflow Components: Props, Variants, and Reusable Design</div>
-                <div class="proposal-title-es">La guía completa de componentes en Webflow: Props, variants y diseño reutilizable</div>
-            </div>
-            <div class="proposal-slug">the-complete-guide-to-webflow-components-props-variants-and-reusable-design</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">guide</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Webflow ha mejorado significativamente su sistema de componentes con props, variantes y slots. No tenemos una guía unificada que explique todo el sistema de componentes en un solo lugar. Es un tema fundamental para cualquier proyecto profesional en Webflow.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 15 -->
-        <div class="suggestion-block" data-index="15" data-slug="webflow-apps-marketplace-essential-integrations-for-marketing-teams">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#15</span>
-                <span class="suggestion-location">resource · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Webflow Apps Marketplace: Essential Integrations for Marketing Teams</div>
-                <div class="proposal-title-es">Webflow Apps Marketplace: integraciones esenciales para equipos de marketing</div>
-            </div>
-            <div class="proposal-slug">webflow-apps-marketplace-essential-integrations-for-marketing-teams</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">resource</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> El marketplace de Webflow Apps ha crecido mucho y no tenemos un artículo que catalogue las integraciones más útiles. Es un artículo tipo recurso que ayuda a equipos de marketing a descubrir herramientas que mejoren su workflow con Webflow, desde CRM hasta analytics y email marketing.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 16 -->
-        <div class="suggestion-block" data-index="16" data-slug="how-to-create-a-client-handoff-process-in-webflow-the-complete-guide">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#16</span>
-                <span class="suggestion-location">guide · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Create a Client Handoff Process in Webflow: The Complete Guide</div>
-                <div class="proposal-title-es">Cómo crear un proceso de entrega al cliente en Webflow: la guía completa</div>
-            </div>
-            <div class="proposal-slug">how-to-create-a-client-handoff-process-in-webflow-the-complete-guide</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">guide</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> No cubrimos el proceso de handoff al cliente en Webflow. Es un tema crítico para agencias y freelancers que construyen sitios para terceros. Incluye configuración de accesos, documentación, entrenamiento del cliente y mejores prácticas para asegurar una transición exitosa.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 17 -->
-        <div class="suggestion-block" data-index="17" data-slug="framer-server-actions-explained-what-they-are-and-how-to-use-them">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#17</span>
-                <span class="suggestion-location">reference · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">Framer Server Actions Explained: What They Are and How to Use Them</div>
-                <div class="proposal-title-es">Framer Server Actions explicados: qué son y cómo usarlos</div>
-            </div>
-            <div class="proposal-slug">framer-server-actions-explained-what-they-are-and-how-to-use-them</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">reference</span>
-                <span class="pill pill-platform">framer</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Los Server Actions son una funcionalidad relativamente nueva de Framer que permite ejecutar lógica de servidor sin backend externo. No hay ningún artículo en nuestro blog que los cubra y es una feature que muchos desarrolladores están empezando a explorar para formularios, APIs y automatizaciones.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 18 -->
-        <div class="suggestion-block" data-index="18" data-slug="how-to-set-up-webflow-native-localization-for-multilingual-sites">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#18</span>
-                <span class="suggestion-location">guide · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Set Up Webflow Native Localization for Multilingual Sites</div>
-                <div class="proposal-title-es">Cómo configurar Webflow Localization nativo para sitios multilingües</div>
-            </div>
-            <div class="proposal-slug">how-to-set-up-webflow-native-localization-for-multilingual-sites</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">guide</span>
-                <span class="pill pill-platform">webflow</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Justificación:</strong> Webflow lanzó localization nativo y no tenemos un tutorial de setup paso a paso. El único artículo relacionado es la comparación "Weglot vs Webflow Localization vs Linguana", pero no un how-to dedicado. Con la European Accessibility Act y la demanda de sitios multilingües, este tema tiene alto volumen de búsqueda y es completamente evergreen.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
-            </div>
-        </div>
-
-        <!-- PROPOSAL 19 -->
-        <div class="suggestion-block" data-index="19" data-slug="how-to-create-a-table-of-contents-in-webflow-blog-posts">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#19</span>
                 <span class="suggestion-location">tutorial · webflow</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">How to Create a Table of Contents in Webflow Blog Posts</div>
-                <div class="proposal-title-es">Cómo crear una tabla de contenidos en posts de blog de Webflow</div>
+                <div class="proposal-title-en">How to Fix Slow Page Speed in Webflow</div>
+                <div class="proposal-title-es">Cómo solucionar la velocidad de carga lenta en Webflow</div>
             </div>
-            <div class="proposal-slug">how-to-create-a-table-of-contents-in-webflow-blog-posts</div>
+            <div class="proposal-slug">how-to-fix-slow-page-speed-in-webflow</div>
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">webflow</span>
+                <span class="pill pill-status">Round 3</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Las tablas de contenido generan jump links en los resultados de Google (mejor CTR) y mejoran la navegación en artículos largos. No tenemos tutorial de esto para Webflow. Es un tutorial práctico con beneficio directo para SEO que complementa bien nuestros artículos existentes de schema y structured data.
-            </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+                <strong>Gap:</strong> El tema más recurrente en el foro de Webflow. Múltiples threads activos con miles de views. El blog tiene "Is Webflow fast?" (análisis) y un fix puntual de layout shift, pero no una guía de troubleshooting completa: JS bundled, imágenes, interacciones, embeds, fuentes.
             </div>
         </div>
 
-        <!-- PROPOSAL 20 -->
-        <div class="suggestion-block" data-index="20" data-slug="framer-accessibility-guide-how-to-build-wcag-compliant-sites">
+        <!-- #9 -->
+        <div class="suggestion-block" data-platform="framer">
             <div class="suggestion-header">
-                <span class="suggestion-number">#20</span>
-                <span class="suggestion-location">reference · framer</span>
+                <span class="suggestion-number">#9</span>
+                <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
-                <div class="proposal-title-en">Framer Accessibility Guide: How to Build WCAG-Compliant Sites</div>
-                <div class="proposal-title-es">Guía de accesibilidad en Framer: cómo construir sitios compatibles con WCAG</div>
+                <div class="proposal-title-en">How to Connect Framer CMS to Google Sheets Using the Official Plugin</div>
+                <div class="proposal-title-es">Cómo conectar el CMS de Framer a Google Sheets usando el plugin oficial</div>
             </div>
-            <div class="proposal-slug">framer-accessibility-guide-how-to-build-wcag-compliant-sites</div>
+            <div class="proposal-slug">how-to-connect-framer-cms-to-google-sheets-using-the-official-plugin</div>
             <div class="proposal-meta">
-                <span class="pill pill-type">reference</span>
+                <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
+                <span class="pill pill-status">Round 3</span>
             </div>
             <div class="proposal-justification">
-                <strong>Justificación:</strong> Así como Webflow necesita una guía de accesibilidad, Framer también. Muchos asumen que los sitios en Framer son accesibles por defecto, pero no es así. Esta guía cubriría las mejores prácticas específicas para proyectos en Framer, incluyendo navegación por teclado, ARIA labels y contraste de colores.
+                <strong>Gap:</strong> Plugin oficial gratuito listado como destacado en el marketplace. Sigue el mismo patrón que Notion CMS sync (aprobado). El blog tiene Google Sheets para Webflow forms y Framer forms, pero NO para Framer CMS sync.
             </div>
-            <div class="decision-bar">
-                <button class="decision-btn btn-realizar" data-action="realizar"><i class="bi bi-check-circle"></i> Realizar</button>
-                <button class="decision-btn btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
-                <button class="decision-btn btn-descartar" data-action="descartar"><i class="bi bi-x-circle"></i> Descartar</button>
+        </div>
+
+        <!-- #10 -->
+        <div class="suggestion-block" data-platform="webflow">
+            <div class="suggestion-header">
+                <span class="suggestion-number">#10</span>
+                <span class="suggestion-location">tutorial · webflow</span>
+            </div>
+            <div class="proposal-titles">
+                <div class="proposal-title-en">How to Set Up Google Consent Mode in Webflow for GDPR Compliance</div>
+                <div class="proposal-title-es">Cómo configurar Google Consent Mode en Webflow para cumplimiento GDPR</div>
+            </div>
+            <div class="proposal-slug">how-to-set-up-google-consent-mode-in-webflow-for-gdpr-compliance</div>
+            <div class="proposal-meta">
+                <span class="pill pill-type">tutorial</span>
+                <span class="pill pill-platform">webflow</span>
+                <span class="pill pill-status">Round 3</span>
+            </div>
+            <div class="proposal-justification">
+                <strong>Gap:</strong> El blog tiene GTM, cookie consent y conversion tracking como artículos separados, pero NINGUNO que los conecte para Consent Mode. Google hizo obligatorio Consent Mode v2 para conversiones EU. Thread activo: "Webflow Analytics not GDPR compliant".
             </div>
         </div>
 
     </div>
 
-    <div class="actions-bar">
-        <div class="actions-counts">
-            <span class="count-item"><span class="count-dot realizar"></span> <strong id="cntRealizar">0</strong> Realizar</span>
-            <span class="count-item"><span class="count-dot guardar"></span> <strong id="cntGuardar">0</strong> Guardar luego</span>
-            <span class="count-item"><span class="count-dot descartar"></span> <strong id="cntDescartar">0</strong> Descartar</span>
-            <span class="count-item"><span class="count-dot pendiente"></span> <strong id="cntPendiente">20</strong> Sin decidir</span>
-        </div>
-        <button class="btn-share-link" id="btnShare"><i class="bi bi-link-45deg"></i> Copiar link compartible</button>
-        <button class="btn-copy-text" id="btnCopyText"><i class="bi bi-clipboard-check"></i> Copiar como texto</button>
-    </div>
-
-    <footer>Article Researcher tool — proposes new topics for the BRIX Templates blog</footer>
+    <footer>Article Researcher tool — 10 approved articles for BRIX Templates blog · Batch 2026-05-28</footer>
 
     <script>
-    (function () {
-        const blocks = document.querySelectorAll('.suggestion-block');
-
-        // ── State management via URL hash ──
-        // Format: #r:1,5,8|g:2,3|d:4,6,7
-        function readState() {
-            const hash = location.hash.slice(1);
-            const state = {};
-            if (!hash) return state;
-            const keyMap = { r: 'realizar', g: 'guardar', d: 'descartar' };
-            hash.split('|').forEach(seg => {
-                const [key, ids] = seg.split(':');
-                if (key && ids && keyMap[key]) {
-                    ids.split(',').forEach(i => { state[i] = keyMap[key]; });
-                }
-            });
-            return state;
-        }
-
-        function writeState(state) {
-            const groups = { r: [], g: [], d: [] };
-            Object.entries(state).forEach(([idx, action]) => {
-                if (action === 'realizar') groups.r.push(idx);
-                else if (action === 'guardar') groups.g.push(idx);
-                else if (action === 'descartar') groups.d.push(idx);
-            });
-            const parts = [];
-            if (groups.r.length) parts.push('r:' + groups.r.join(','));
-            if (groups.g.length) parts.push('g:' + groups.g.join(','));
-            if (groups.d.length) parts.push('d:' + groups.d.join(','));
-            history.replaceState(null, '', parts.length ? '#' + parts.join('|') : location.pathname);
-        }
-
-        // ── Apply state to UI ──
-        function applyState(state) {
-            blocks.forEach(block => {
-                const idx = block.getAttribute('data-index');
-                const action = state[idx] || null;
-                block.className = 'suggestion-block' + (action ? ' state-' + action : '');
-                block.querySelectorAll('.decision-btn').forEach(btn => {
-                    btn.className = 'decision-btn btn-' + btn.getAttribute('data-action');
-                    if (btn.getAttribute('data-action') === action) {
-                        btn.classList.add('active-' + action);
-                    }
-                });
-            });
-            updateCounts();
-        }
-
-        function updateCounts() {
-            let r = 0, g = 0, d = 0, p = 0;
-            blocks.forEach(block => {
-                if (block.classList.contains('state-realizar')) r++;
-                else if (block.classList.contains('state-guardar')) g++;
-                else if (block.classList.contains('state-descartar')) d++;
-                else p++;
-            });
-            document.getElementById('cntRealizar').textContent = r;
-            document.getElementById('cntGuardar').textContent = g;
-            document.getElementById('cntDescartar').textContent = d;
-            document.getElementById('cntPendiente').textContent = p;
-        }
-
-        // ── Button clicks ──
-        blocks.forEach(block => {
-            block.querySelectorAll('.decision-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const idx = block.getAttribute('data-index');
-                    const action = this.getAttribute('data-action');
-                    const state = readState();
-
-                    // Toggle: clicking same action removes it
-                    if (state[idx] === action) {
-                        delete state[idx];
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.suggestion-block').forEach(block => {
+                    const platform = block.getAttribute('data-platform');
+                    if (filter === 'all' || platform === filter) {
+                        block.classList.remove('hidden');
                     } else {
-                        state[idx] = action;
+                        block.classList.add('hidden');
                     }
-
-                    writeState(state);
-                    applyState(state);
                 });
             });
         });
-
-        // ── Share link button ──
-        document.getElementById('btnShare').addEventListener('click', function () {
-            const url = location.href;
-            navigator.clipboard.writeText(url).then(() => {
-                const orig = this.innerHTML;
-                this.innerHTML = '<i class="bi bi-check2"></i> Link copiado!';
-                setTimeout(() => { this.innerHTML = orig; }, 1500);
-            }).catch(() => {
-                prompt('Copia este link:', url);
-            });
-        });
-
-        // ── Copy as text button ──
-        document.getElementById('btnCopyText').addEventListener('click', function () {
-            const realizar = [], guardar = [], descartar = [];
-            blocks.forEach(block => {
-                const slug = block.getAttribute('data-slug') || '';
-                const index = block.getAttribute('data-index') || '';
-                const titleEn = (block.querySelector('.proposal-title-en')?.textContent || '').trim();
-                const type = (block.querySelector('.pill-type')?.textContent || '').trim();
-                const platform = (block.querySelector('.pill-platform')?.textContent || '').trim();
-
-                const entry = { index, slug, titleEn, type, platform };
-
-                if (block.classList.contains('state-realizar')) realizar.push(entry);
-                else if (block.classList.contains('state-guardar')) guardar.push(entry);
-                else if (block.classList.contains('state-descartar')) descartar.push(entry);
-            });
-
-            let out = '';
-            out += '=== REALIZAR (' + realizar.length + ') ===\n\n';
-            realizar.forEach(e => {
-                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
-                out += '  slug:     ' + e.slug + '\n';
-                out += '  title_en: ' + e.titleEn + '\n\n';
-            });
-
-            out += '=== GUARDAR LUEGO (' + guardar.length + ') ===\n\n';
-            guardar.forEach(e => {
-                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
-                out += '  slug:     ' + e.slug + '\n';
-                out += '  title_en: ' + e.titleEn + '\n\n';
-            });
-
-            out += '=== DESCARTAR (' + descartar.length + ') ===\n\n';
-            descartar.forEach(e => {
-                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
-                out += '  slug:     ' + e.slug + '\n';
-                out += '  title_en: ' + e.titleEn + '\n';
-                out += '  reason:   rejected by editor\n\n';
-            });
-
-            navigator.clipboard.writeText(out).then(() => {
-                const orig = this.innerHTML;
-                this.innerHTML = '<i class="bi bi-check2"></i> Copiado!';
-                setTimeout(() => { this.innerHTML = orig; }, 1500);
-            }).catch(() => {
-                prompt('Copia el texto:', out);
-            });
-        });
-
-        // ── Init: restore state from URL ──
-        applyState(readState());
-    })();
     </script>
 </body>
 </html>
