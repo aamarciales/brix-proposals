@@ -62,10 +62,6 @@
             background: var(--color-accent-200);
             color: var(--color-accent-dark);
         }
-        .pill-status {
-            background: #dcfce7;
-            color: #166534;
-        }
         .proposal-justification {
             padding: 16px 24px 20px;
             font-size: 13px;
@@ -76,48 +72,6 @@
             font-weight: 600;
             color: var(--color-primary);
         }
-        .filter-bar {
-            display: flex;
-            gap: 8px;
-            padding: 16px 24px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid var(--color-gray-200);
-            background: var(--color-surface);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .filter-btn {
-            font-size: 12px;
-            font-weight: 600;
-            padding: 5px 14px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--color-gray-200);
-            background: var(--color-surface);
-            color: var(--color-gray-600);
-            cursor: pointer;
-            transition: all 0.15s ease;
-        }
-        .filter-btn:hover { background: var(--color-gray-100); }
-        .filter-btn.active {
-            background: var(--color-primary);
-            color: #fff;
-            border-color: var(--color-primary);
-        }
-        .suggestion-block.hidden { display: none; }
-        .stats-bar {
-            display: flex;
-            gap: 16px;
-            padding: 16px 24px;
-            flex-wrap: wrap;
-        }
-        .stat-item {
-            font-size: 13px;
-            color: var(--color-gray-600);
-        }
-        .stat-item strong {
-            color: var(--color-primary);
-        }
     </style>
 </head>
 <body>
@@ -126,33 +80,23 @@
         <img src="https://apps.brixtemplates.com/article-builder/assets/favicon.svg" alt="BRIX Templates" class="logo-icon">
         <div class="logo">Article Researcher</div>
         <div class="logo-divider"></div>
-        <div class="logo-subtext">10 approved articles — Batch 2026-05-28</div>
+        <div class="logo-subtext">3 approved articles — Batch 2026-05-28</div>
     </div></div></div>
 
     <div class="content-area">
 
         <div class="about-card">
             <h1>Approved Articles — Batch 2026-05-28</h1>
-            <p class="subtitle">10 articles approved across 3 rounds. Pending research + outlines.</p>
-            <div class="stats-bar">
-                <span class="stat-item"><i class="bi bi-check-circle-fill" style="color:#166534"></i> <strong>10</strong> approved</span>
-                <span class="stat-item"><i class="bi bi-x-circle-fill" style="color:#991b1b"></i> <strong>8</strong> rejected</span>
-                <span class="stat-item"><i class="bi bi-framer"></i> <strong>6</strong> framer</span>
-                <span class="stat-item"><i class="bi bi-globe2"></i> <strong>4</strong> webflow</span>
-            </div>
-        </div>
-
-        <div class="filter-bar">
-            <button class="filter-btn active" data-filter="all">Todos (10)</button>
-            <button class="filter-btn" data-filter="framer">Framer (6)</button>
-            <button class="filter-btn" data-filter="webflow">Webflow (4)</button>
+            <p class="subtitle">3 articles approved for outline generation. Check to keep, uncheck to discard, then click "Copy selections".</p>
+            <span class="suggestion-count"><i class="bi bi-check2-circle"></i> 3 approved articles</span>
         </div>
 
         <div class="section-label"><i class="bi bi-check2-circle"></i> Approved Articles</div>
 
         <!-- #1 -->
-        <div class="suggestion-block" data-platform="framer">
+        <div class="suggestion-block" data-index="1" data-slug="how-to-connect-framer-forms-to-mailchimp">
             <div class="suggestion-header">
+                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
                 <span class="suggestion-number">#1</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
@@ -164,164 +108,18 @@
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 1</span>
             </div>
             <div class="proposal-justification">
-                <strong>Gap:</strong> El blog tiene "How to integrate Webflow forms with Mailchimp" pero no el equivalente para Framer. Webhook setup, mapeo de campos, doble opt-in, troubleshooting cuando leads no llegan.
+                <strong>Gap:</strong> El blog tiene "How to integrate Webflow forms with Mailchimp" pero no el equivalente para Framer. Webhook setup, mapeo de campos, doble opt-in, troubleshooting cuando leads no llegan o se duplican.
             </div>
+            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
         </div>
 
         <!-- #2 -->
-        <div class="suggestion-block" data-platform="webflow">
+        <div class="suggestion-block" data-index="2" data-slug="how-to-connect-framer-cms-to-google-sheets-using-the-official-plugin">
             <div class="suggestion-header">
+                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
                 <span class="suggestion-number">#2</span>
-                <span class="suggestion-location">tutorial · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Use Component Props in Webflow Custom Code Embeds</div>
-                <div class="proposal-title-es">Cómo usar props de componentes en embeds de código custom de Webflow</div>
-            </div>
-            <div class="proposal-slug">how-to-use-component-props-in-webflow-custom-code-embeds</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">webflow</span>
-                <span class="pill pill-status">Round 1</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> Webflow acaba de habilitar props y datos dinámicos en Code Embed elements. Feature completamente nueva sin cobertura. Cambia cómo se construyen componentes interactivos (mapas, charts, iframes).
-            </div>
-        </div>
-
-        <!-- #3 -->
-        <div class="suggestion-block" data-platform="framer">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#3</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Inline-Edit and Bulk-Edit Framer CMS Items in the New Table View</div>
-                <div class="proposal-title-es">Cómo editar inline y en bulk items CMS de Framer en la nueva vista de tabla</div>
-            </div>
-            <div class="proposal-slug">how-to-inline-edit-and-bulk-edit-framer-cms-items-in-table-view</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 1</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> CMS 3.0 rediseñó completamente el CMS con inline editing, multi-cell selection, bulk actions. El artículo existente de bulk edit cubre el método viejo. Este cubre el nuevo workflow.
-            </div>
-        </div>
-
-        <!-- #4 -->
-        <div class="suggestion-block" data-platform="webflow">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#4</span>
-                <span class="suggestion-location">tutorial · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Make Your Webflow Site Appear in AI Search Results</div>
-                <div class="proposal-title-es">Cómo hacer que tu sitio Webflow aparezca en resultados de búsqueda de IA</div>
-            </div>
-            <div class="proposal-slug">how-to-make-your-webflow-site-appear-in-ai-search-results</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">webflow</span>
-                <span class="pill pill-status">Round 1</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> Webflow acaba de lanzar AEO para Enterprise, pero todos los planes pueden optimizar para IA. El blog tiene el artículo de llms.txt pero falta uno que cubra el panorama completo: ChatGPT, Perplexity, Gemini, structured data, contenido machine-readable.
-            </div>
-        </div>
-
-        <!-- #5 -->
-        <div class="suggestion-block" data-platform="framer">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#5</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Build a Custom 404 Page in Framer That Protects Your SEO</div>
-                <div class="proposal-title-es">Cómo crear una página 404 custom en Framer que proteja tu SEO</div>
-            </div>
-            <div class="proposal-slug">how-to-build-a-custom-404-page-in-framer-that-protects-your-seo</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 1</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> No existe ningún artículo sobre páginas 404 en Framer. El blog tiene wildcard redirects y unindex pages, pero nada sobre diseñar y configurar una 404 que mantenga al usuario y proteja link equity. Soft 404s, monitoreo en GSC.
-            </div>
-        </div>
-
-        <!-- #6 -->
-        <div class="suggestion-block" data-platform="framer">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#6</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Sync Framer CMS with Notion Using the Official Plugin</div>
-                <div class="proposal-title-es">Cómo sincronizar el CMS de Framer con Notion usando el plugin oficial</div>
-            </div>
-            <div class="proposal-slug">how-to-sync-framer-cms-with-notion-using-the-official-plugin</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 2</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> El blog tiene "How to connect Framer forms to Notion" (formularios) pero no CMS sync. Son cosas distintas: forms → Notion es una integración de formularios; CMS sync es usar Notion como backend de contenido. Plugin oficial con 22K usuarios.
-            </div>
-        </div>
-
-        <!-- #7 -->
-        <div class="suggestion-block" data-platform="framer">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#7</span>
-                <span class="suggestion-location">tutorial · framer</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Add Dynamic SEO Titles and Meta Descriptions to Framer CMS Pages</div>
-                <div class="proposal-title-es">Cómo agregar títulos SEO y meta descriptions dinámicos a páginas CMS de Framer</div>
-            </div>
-            <div class="proposal-slug">how-to-add-dynamic-seo-titles-and-meta-descriptions-to-framer-cms-pages</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 2</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> Framer agregó CMS Variables que permiten campos dinámicos en page title, meta description y custom code (JSON-LD). Feature nueva sin tutorial. Por default todas las CMS pages tienen el mismo meta genérico = terrible para SEO.
-            </div>
-        </div>
-
-        <!-- #8 -->
-        <div class="suggestion-block" data-platform="webflow">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#8</span>
-                <span class="suggestion-location">tutorial · webflow</span>
-            </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Fix Slow Page Speed in Webflow</div>
-                <div class="proposal-title-es">Cómo solucionar la velocidad de carga lenta en Webflow</div>
-            </div>
-            <div class="proposal-slug">how-to-fix-slow-page-speed-in-webflow</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">webflow</span>
-                <span class="pill pill-status">Round 3</span>
-            </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> El tema más recurrente en el foro de Webflow. Múltiples threads activos con miles de views. El blog tiene "Is Webflow fast?" (análisis) y un fix puntual de layout shift, pero no una guía de troubleshooting completa: JS bundled, imágenes, interacciones, embeds, fuentes.
-            </div>
-        </div>
-
-        <!-- #9 -->
-        <div class="suggestion-block" data-platform="framer">
-            <div class="suggestion-header">
-                <span class="suggestion-number">#9</span>
                 <span class="suggestion-location">tutorial · framer</span>
             </div>
             <div class="proposal-titles">
@@ -332,17 +130,18 @@
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">framer</span>
-                <span class="pill pill-status">Round 3</span>
             </div>
             <div class="proposal-justification">
-                <strong>Gap:</strong> Plugin oficial gratuito listado como destacado en el marketplace. Sigue el mismo patrón que Notion CMS sync (aprobado). El blog tiene Google Sheets para Webflow forms y Framer forms, pero NO para Framer CMS sync.
+                <strong>Gap:</strong> Plugin oficial gratuito listado como destacado en el marketplace. El blog tiene Google Sheets para Webflow forms y Framer forms, pero NO para Framer CMS sync. Instalación, conexión, mapeo de columnas, sync bidireccional, troubleshooting.
             </div>
+            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
         </div>
 
-        <!-- #10 -->
-        <div class="suggestion-block" data-platform="webflow">
+        <!-- #3 -->
+        <div class="suggestion-block" data-index="3" data-slug="how-to-set-up-google-consent-mode-in-webflow-for-gdpr-compliance">
             <div class="suggestion-header">
-                <span class="suggestion-number">#10</span>
+                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
+                <span class="suggestion-number">#3</span>
                 <span class="suggestion-location">tutorial · webflow</span>
             </div>
             <div class="proposal-titles">
@@ -353,33 +152,87 @@
             <div class="proposal-meta">
                 <span class="pill pill-type">tutorial</span>
                 <span class="pill pill-platform">webflow</span>
-                <span class="pill pill-status">Round 3</span>
             </div>
             <div class="proposal-justification">
-                <strong>Gap:</strong> El blog tiene GTM, cookie consent y conversion tracking como artículos separados, pero NINGUNO que los conecte para Consent Mode. Google hizo obligatorio Consent Mode v2 para conversiones EU. Thread activo: "Webflow Analytics not GDPR compliant".
+                <strong>Gap:</strong> El blog tiene GTM, cookie consent y conversion tracking como artículos separados, pero NINGUNO que los conecte para Consent Mode. Google hizo obligatorio Consent Mode v2 para conversiones EU. Conectar cookie banner con GTM para que GA4 y Google Ads respeten consentimiento.
             </div>
+            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
         </div>
 
     </div>
 
-    <footer>Article Researcher tool — 10 approved articles for BRIX Templates blog · Batch 2026-05-28</footer>
+    <div class="actions-bar">
+        <div class="actions-status"><strong id="selectedCount">3</strong> of <strong id="totalCount">3</strong> selected</div>
+        <button class="btn-copy-selections" id="btnCopy"><i class="bi bi-clipboard-check"></i> Copy selections</button>
+    </div>
+
+    <footer>Article Researcher tool — 3 approved articles for BRIX Templates blog · Batch 2026-05-28</footer>
+
+    <script src="https://agents.maurosicard.com/interlinker-ui/script.js"></script>
 
     <script>
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.getAttribute('data-filter');
-                document.querySelectorAll('.suggestion-block').forEach(block => {
-                    const platform = block.getAttribute('data-platform');
-                    if (filter === 'all' || platform === filter) {
-                        block.classList.remove('hidden');
+        (function () {
+            const btn = document.getElementById('btnCopy');
+            if (!btn) return;
+
+            const fresh = btn.cloneNode(true);
+            btn.parentNode.replaceChild(fresh, btn);
+
+            fresh.addEventListener('click', function () {
+                const blocks = document.querySelectorAll('.suggestion-block');
+                const approved = [];
+                const rejected = [];
+
+                blocks.forEach(block => {
+                    const slug = block.getAttribute('data-slug') || '';
+                    const index = block.getAttribute('data-index') || '';
+                    const checkbox = block.querySelector('.suggestion-checkbox');
+                    const titleEn = (block.querySelector('.proposal-title-en')?.textContent || '').trim();
+                    const titleEs = (block.querySelector('.proposal-title-es')?.textContent || '').trim();
+                    const type = (block.querySelector('.pill-type')?.textContent || '').trim();
+                    const platform = (block.querySelector('.pill-platform')?.textContent || '').trim();
+                    const comment = (block.querySelector('.comment-input')?.value || '').trim();
+
+                    const entry = { index, slug, titleEn, titleEs, type, platform, comment };
+
+                    if (checkbox && checkbox.checked) {
+                        approved.push(entry);
                     } else {
-                        block.classList.add('hidden');
+                        rejected.push(entry);
                     }
                 });
+
+                let out = '';
+                out += '=== APPROVED (' + approved.length + ') ===\n\n';
+                approved.forEach(e => {
+                    out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                    out += '  slug:     ' + e.slug + '\n';
+                    out += '  title_en: ' + e.titleEn + '\n';
+                    out += '  title_es: ' + e.titleEs + '\n';
+                    if (e.comment) out += '  comment:  ' + e.comment + '\n';
+                    out += '\n';
+                });
+
+                out += '=== REJECTED (' + rejected.length + ') ===\n\n';
+                rejected.forEach(e => {
+                    out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                    out += '  slug:     ' + e.slug + '\n';
+                    out += '  title_en: ' + e.titleEn + '\n';
+                    if (e.comment) out += '  reason:   ' + e.comment + '\n';
+                    else out += '  reason:   rejected by editor\n';
+                    out += '\n';
+                });
+
+                navigator.clipboard.writeText(out).then(() => {
+                    const original = fresh.innerHTML;
+                    fresh.innerHTML = '<i class="bi bi-check2"></i> Copied!';
+                    setTimeout(() => { fresh.innerHTML = original; }, 1500);
+                }).catch(err => {
+                    console.error('Clipboard error:', err);
+                    alert('Could not copy. Output:\n\n' + out);
+                });
             });
-        });
+        })();
     </script>
 </body>
 </html>
