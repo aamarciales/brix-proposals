@@ -4,17 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Approved Articles | Batch 2026-05-28</title>
+    <title>Article Proposals | 2026-06-10</title>
     <link rel="icon" type="image/svg+xml" href="https://apps.brixtemplates.com/article-builder/assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://agents.maurosicard.com/interlinker-ui/style.css">
 
     <style>
-        .proposal-titles { padding: 18px 24px 8px; }
-        .proposal-title-en {
+        :root {
+            --color-bg: #f7f7fc;
+            --color-primary: #1a1a1a;
+            --color-white: #ffffff;
+            --color-gray-50: #fafbfc;
+            --color-gray-100: #f8f9fa;
+            --color-gray-200: #e8eaed;
+            --color-gray-300: #d0d0d0;
+            --color-gray-500: #999999;
+            --color-gray-600: #666666;
+            --color-gray-700: #333333;
+            --color-accent: #7d5dff;
+            --color-accent-dark: #6342ea;
+            --color-accent-100: #f5f3ff;
+            --color-accent-200: #ede9fe;
+            --color-success: #16a34a;
+            --color-success-bg: #dcfce7;
+            --color-success-dark: #166534;
+            --color-warn: #ca8a04;
+            --color-warn-bg: #fef9c3;
+            --color-warn-dark: #854d0e;
+            --color-danger: #dc2626;
+            --color-danger-bg: #fee2e2;
+            --color-danger-dark: #991b1b;
+            --font-primary: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 10px;
+            --radius-pill: 20px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.03);
+            --shadow-md: 0 2px 8px rgba(0,0,0,0.04);
+            --transition: all 0.15s ease;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--color-bg);
+            color: var(--color-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-bar {
+            background: var(--color-white);
+            padding: 20px 0;
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .top-bar-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-section { display: flex; align-items: center; gap: 16px; }
+        .logo-icon { height: 40px; width: auto; }
+        .logo { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+        .logo-divider { width: 1px; height: 32px; background: var(--color-gray-200); }
+        .logo-subtext { font-size: 12px; color: var(--color-gray-600); font-weight: 500; }
+
+        .content-area {
+            flex: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px 32px 120px;
+            width: 100%;
+        }
+
+        .about-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        .about-card h1 {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+        .about-card .subtitle {
+            font-size: 13px;
+            color: var(--color-gray-600);
+            margin-bottom: 16px;
+        }
+
+        .status-filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .status-filter {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            cursor: pointer;
+            border: 1px solid var(--color-gray-200);
+            background: var(--color-white);
+            color: var(--color-gray-600);
+            transition: var(--transition);
+        }
+        .status-filter:hover { background: var(--color-gray-50); }
+        .status-filter.active { color: var(--color-primary); border-color: var(--color-primary); background: var(--color-gray-50); }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .status-dot.realizar { background: var(--color-success); }
+        .status-dot.guardar { background: var(--color-warn); }
+        .status-dot.descartar { background: var(--color-danger); }
+        .status-dot.pendiente { background: var(--color-gray-300); }
+        .status-count { font-weight: 700; }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-gray-500), var(--color-gray-600));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .proposal-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        .proposal-card[data-status="realizar"] {
+            border-left: 4px solid var(--color-success);
+            opacity: 1;
+        }
+        .proposal-card[data-status="guardar"] {
+            border-left: 4px solid var(--color-warn);
+            opacity: 0.85;
+        }
+        .proposal-card[data-status="descartar"] {
+            border-left: 4px solid var(--color-danger);
+            opacity: 0.5;
+        }
+        .proposal-card[data-status="pendiente"] {
+            border-left: 4px solid var(--color-gray-300);
+            opacity: 1;
+        }
+        .proposal-card.hidden { display: none; }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--color-gray-200);
+            background: var(--color-gray-50);
+        }
+        .card-number {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+            color: var(--color-white);
+        }
+        .card-number.new-badge {
+            background: linear-gradient(135deg, var(--color-success), #15803d);
+        }
+        .card-category {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-gray-600);
+        }
+
+        .card-body { padding: 18px 24px 0; }
+        .card-title-en {
             font-size: 17px;
             font-weight: 700;
             letter-spacing: -0.01em;
@@ -22,14 +213,15 @@
             line-height: 1.35;
             margin-bottom: 4px;
         }
-        .proposal-title-es {
+        .card-title-es {
             font-size: 14px;
             font-weight: 500;
             color: var(--color-gray-600);
             line-height: 1.4;
             font-style: italic;
+            margin-bottom: 8px;
         }
-        .proposal-slug {
+        .card-slug {
             display: inline-block;
             font-family: 'JetBrains Mono', ui-monospace, monospace;
             font-size: 12px;
@@ -37,12 +229,12 @@
             background: var(--color-accent-100);
             padding: 3px 8px;
             border-radius: 4px;
-            margin: 4px 24px 0;
+            margin-bottom: 10px;
         }
-        .proposal-meta {
+        .card-meta {
             display: flex;
             gap: 8px;
-            padding: 12px 24px 0;
+            margin-bottom: 12px;
             flex-wrap: wrap;
         }
         .pill {
@@ -62,15 +254,190 @@
             background: var(--color-accent-200);
             color: var(--color-accent-dark);
         }
-        .proposal-justification {
-            padding: 16px 24px 20px;
+        .pill-status {
+            font-size: 10px;
+            padding: 2px 8px;
+            display: none;
+        }
+        [data-status="realizar"] .pill-status.realizar-pill { display: inline-block; background: var(--color-success-bg); color: var(--color-success-dark); }
+        [data-status="guardar"] .pill-status.guardar-pill { display: inline-block; background: var(--color-warn-bg); color: var(--color-warn-dark); }
+        [data-status="descartar"] .pill-status.descartar-pill { display: inline-block; background: var(--color-danger-bg); color: var(--color-danger-dark); }
+
+        .card-justification {
             font-size: 13px;
             color: var(--color-gray-700);
             line-height: 1.65;
+            margin-bottom: 16px;
         }
-        .proposal-justification strong {
+        .card-justification strong {
             font-weight: 600;
             color: var(--color-primary);
+        }
+
+        .card-comment {
+            padding: 0 24px;
+            display: none;
+        }
+        .card-comment.visible { display: block; padding-bottom: 12px; }
+        .card-comment textarea {
+            width: 100%;
+            font-family: var(--font-primary);
+            font-size: 13px;
+            padding: 10px 14px;
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-sm);
+            background: var(--color-white);
+            color: var(--color-primary);
+            resize: none;
+            outline: none;
+            transition: var(--transition);
+        }
+        .card-comment textarea:focus {
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(125, 93, 255, 0.1);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            padding: 16px 24px 20px;
+        }
+        .btn-action {
+            flex: 1;
+            font-family: var(--font-primary);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .btn-action i { font-size: 14px; }
+        .btn-action:hover { transform: translateY(-1px); }
+        .btn-action:active { transform: scale(0.97); }
+
+        .btn-realizar {
+            background: var(--color-success);
+            color: var(--color-white);
+        }
+        .btn-realizar:hover { background: #15803d; }
+        .btn-realizar.selected {
+            background: var(--color-success);
+            color: var(--color-white);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.3);
+        }
+
+        .btn-guardar {
+            background: var(--color-gray-200);
+            color: var(--color-gray-700);
+        }
+        .btn-guardar:hover { background: var(--color-gray-300); }
+        .btn-guardar.selected {
+            background: var(--color-warn);
+            color: var(--color-white);
+            box-shadow: 0 0 0 3px rgba(202, 138, 4, 0.3);
+        }
+
+        .btn-descartar {
+            background: var(--color-gray-200);
+            color: var(--color-gray-700);
+        }
+        .btn-descartar:hover { background: #e5e7eb; }
+        .btn-descartar.selected {
+            background: var(--color-danger);
+            color: var(--color-white);
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+        }
+
+        .bottom-bar {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-gray-200);
+            padding: 20px 32px;
+            position: sticky;
+            bottom: 0;
+            z-index: 100;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
+        }
+        .bottom-bar-inner {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .bottom-bar-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        .bottom-bar-status {
+            font-size: 13px;
+            color: var(--color-gray-600);
+        }
+        .bottom-bar-status strong { color: var(--color-accent); }
+
+        .btn-bottom {
+            font-family: var(--font-primary);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .btn-bottom i { font-size: 14px; }
+        .btn-bottom:hover { transform: translateY(-1px); }
+
+        .btn-copy-text {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+        .btn-copy-link {
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 1px solid var(--color-gray-200);
+        }
+
+        .bottom-bar-url {
+            font-size: 11px;
+            color: var(--color-gray-500);
+            font-family: 'JetBrains Mono', ui-monospace, monospace;
+            padding: 8px 14px;
+            background: var(--color-gray-50);
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--color-gray-200);
+            word-break: break-all;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--color-gray-100) 0%, var(--color-white) 100%);
+            border-top: 1px solid var(--color-gray-200);
+            padding: 24px 32px;
+            text-align: center;
+            color: var(--color-gray-600);
+            font-size: 13px;
+        }
+
+        @media (max-width: 640px) {
+            .top-bar-content, .content-area, .bottom-bar { padding-left: 16px; padding-right: 16px; }
+            .logo-subtext, .logo-divider { display: none; }
+            .about-card h1 { font-size: 18px; }
+            .card-header { padding: 14px 16px; }
+            .card-body { padding: 16px 16px 0; }
+            .card-actions { padding: 14px 16px 18px; }
+            .status-filters { gap: 8px; }
+            .status-filter { font-size: 11px; padding: 5px 10px; }
         }
     </style>
 </head>
@@ -80,159 +447,502 @@
         <img src="https://apps.brixtemplates.com/article-builder/assets/favicon.svg" alt="BRIX Templates" class="logo-icon">
         <div class="logo">Article Researcher</div>
         <div class="logo-divider"></div>
-        <div class="logo-subtext">3 approved articles — Batch 2026-05-28</div>
+        <div class="logo-subtext">Round 2 — 3 new proposals replacing rejected ones</div>
     </div></div></div>
 
     <div class="content-area">
 
         <div class="about-card">
-            <h1>Approved Articles — Batch 2026-05-28</h1>
-            <p class="subtitle">3 articles approved for outline generation. Check to keep, uncheck to discard, then click "Copy selections".</p>
-            <span class="suggestion-count"><i class="bi bi-check2-circle"></i> 3 approved articles</span>
+            <h1>Article Proposals — Batch 2026-06-10 (Round 2)</h1>
+            <p class="subtitle">3 proposals replaced. Review and choose an action for each, then copy your selections.</p>
+            <div class="status-filters">
+                <button class="status-filter active" data-filter="all">
+                    <span class="status-dot pendiente"></span> Todas <span class="status-count" id="countAll">10</span>
+                </button>
+                <button class="status-filter" data-filter="realizar">
+                    <span class="status-dot realizar"></span> Realizar <span class="status-count" id="countRealizar">0</span>
+                </button>
+                <button class="status-filter" data-filter="guardar">
+                    <span class="status-dot guardar"></span> Guardar luego <span class="status-count" id="countGuardar">0</span>
+                </button>
+                <button class="status-filter" data-filter="descartar">
+                    <span class="status-dot descartar"></span> Descartar <span class="status-count" id="countDescartar">0</span>
+                </button>
+                <button class="status-filter" data-filter="pendiente">
+                    <span class="status-dot pendiente"></span> Sin decidir <span class="status-count" id="countPendiente">10</span>
+                </button>
+            </div>
         </div>
 
-        <div class="section-label"><i class="bi bi-check2-circle"></i> Approved Articles</div>
+        <div class="section-label"><i class="bi bi-lightbulb"></i> Proposed Articles</div>
 
-        <!-- #1 -->
-        <div class="suggestion-block" data-index="1" data-slug="how-to-connect-framer-forms-to-mailchimp">
-            <div class="suggestion-header">
-                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
-                <span class="suggestion-number">#1</span>
-                <span class="suggestion-location">tutorial · framer</span>
+        <!-- ═══ PROPOSAL 1 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="1" data-slug="how-to-display-related-cms-items-in-framer-without-plugins-or-code-overrides" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#1</span>
+                <span class="card-category">tutorial · framer</span>
             </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Connect Framer Forms to Mailchimp</div>
-                <div class="proposal-title-es">Cómo conectar formularios de Framer a Mailchimp</div>
+            <div class="card-body">
+                <div class="card-title-en">How to Display Related CMS Items in Framer Without Plugins or Code Overrides</div>
+                <div class="card-title-es">Cómo mostrar artículos relacionados del CMS en Framer sin plugins ni code overrides</div>
+                <div class="card-slug">how-to-display-related-cms-items-in-framer-without-plugins-or-code-overrides</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> Mostrar "artículos relacionados" o "productos similares" es una funcionalidad básica de cualquier blog o tienda, pero Framer CMS no tiene una feature nativa para esto. Los usuarios recurren a workarounds complicados con code overrides. El blog ya tiene el artículo de Webflow (next/previous links) pero nada para Framer. Este tutorial llena un vacío de CMS muy demandado, con el ángulo de "sin plugins" que siempre funciona bien.
+                </div>
             </div>
-            <div class="proposal-slug">how-to-connect-framer-forms-to-mailchimp</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
             </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> El blog tiene "How to integrate Webflow forms with Mailchimp" pero no el equivalente para Framer. Webhook setup, mapeo de campos, doble opt-in, troubleshooting cuando leads no llegan o se duplican.
-            </div>
-            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
         </div>
 
-        <!-- #2 -->
-        <div class="suggestion-block" data-index="2" data-slug="how-to-connect-framer-cms-to-google-sheets-using-the-official-plugin">
-            <div class="suggestion-header">
-                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
-                <span class="suggestion-number">#2</span>
-                <span class="suggestion-location">tutorial · framer</span>
+        <!-- ═══ PROPOSAL 2 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="2" data-slug="how-to-add-scroll-based-reveal-animations-in-framer-that-stay-smooth-on-mobile" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#2</span>
+                <span class="card-category">tutorial · framer</span>
             </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Connect Framer CMS to Google Sheets Using the Official Plugin</div>
-                <div class="proposal-title-es">Cómo conectar el CMS de Framer a Google Sheets usando el plugin oficial</div>
+            <div class="card-body">
+                <div class="card-title-en">How to Add Scroll-Based Reveal Animations in Framer That Stay Smooth on Mobile</div>
+                <div class="card-title-es">Cómo agregar animaciones de revelado al hacer scroll en Framer que se mantengan fluidas en móvil</div>
+                <div class="card-slug">how-to-add-scroll-based-reveal-animations-in-framer-that-stay-smooth-on-mobile</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El foro de Webflow muestra hilos activos sobre "Timed animation is not smooth or glitch". Las animaciones scroll son una de las features más usadas en Framer, pero frecuentemente se rompen en móvil o causan jank. No hay ningún artículo en el blog sobre este tema. El ángulo de troubleshooting móvil es diferenciador y resuelve un dolor real de los usuarios que quieren sitios con movimiento pero que no maten el rendimiento en teléfonos.
+                </div>
             </div>
-            <div class="proposal-slug">how-to-connect-framer-cms-to-google-sheets-using-the-official-plugin</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">framer</span>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
             </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> Plugin oficial gratuito listado como destacado en el marketplace. El blog tiene Google Sheets para Webflow forms y Framer forms, pero NO para Framer CMS sync. Instalación, conexión, mapeo de columnas, sync bidireccional, troubleshooting.
-            </div>
-            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
         </div>
 
-        <!-- #3 -->
-        <div class="suggestion-block" data-index="3" data-slug="how-to-set-up-google-consent-mode-in-webflow-for-gdpr-compliance">
-            <div class="suggestion-header">
-                <label class="suggestion-check"><input type="checkbox" class="suggestion-checkbox" checked><span class="suggestion-check-box"><i class="bi bi-check-lg"></i></span></label>
-                <span class="suggestion-number">#3</span>
-                <span class="suggestion-location">tutorial · webflow</span>
+        <!-- ═══ PROPOSAL 3 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="3" data-slug="how-to-create-a-dynamic-comparison-table-in-framer-using-cms-collections" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#3</span>
+                <span class="card-category">tutorial · framer</span>
             </div>
-            <div class="proposal-titles">
-                <div class="proposal-title-en">How to Set Up Google Consent Mode in Webflow for GDPR Compliance</div>
-                <div class="proposal-title-es">Cómo configurar Google Consent Mode en Webflow para cumplimiento GDPR</div>
+            <div class="card-body">
+                <div class="card-title-en">How to Create a Dynamic Comparison Table in Framer Using CMS Collections</div>
+                <div class="card-title-es">Cómo crear una tabla comparativa dinámica en Framer usando colecciones CMS</div>
+                <div class="card-slug">how-to-create-a-dynamic-comparison-table-in-framer-using-cms-collections</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El foro tiene un hilo activo "Building Dynamic Comparison Table using Collection Lists". El blog ya tiene la versión Webflow publicada, pero no existe la versión Framer. Las tablas comparativas son extremadamente útiles para páginas de pricing, comparación de planes, y feature lists. Este tutorial muestra cómo leveragear el CMS de Framer para crear tablas que se actualicen automáticamente cuando cambien los datos.
+                </div>
             </div>
-            <div class="proposal-slug">how-to-set-up-google-consent-mode-in-webflow-for-gdpr-compliance</div>
-            <div class="proposal-meta">
-                <span class="pill pill-type">tutorial</span>
-                <span class="pill pill-platform">webflow</span>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
             </div>
-            <div class="proposal-justification">
-                <strong>Gap:</strong> El blog tiene GTM, cookie consent y conversion tracking como artículos separados, pero NINGUNO que los conecte para Consent Mode. Google hizo obligatorio Consent Mode v2 para conversiones EU. Conectar cookie banner con GTM para que GA4 y Google Ads respeten consentimiento.
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 4 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="4" data-slug="how-to-fix-webflow-404-errors-after-publishing-or-renaming-cms-pages" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#4</span>
+                <span class="card-category">tutorial · webflow</span>
             </div>
-            <div class="suggestion-comment"><textarea class="comment-input" rows="1" placeholder="Comentario opcional..."></textarea></div>
+            <div class="card-body">
+                <div class="card-title-en">How to Fix Webflow 404 Errors After Publishing or Renaming CMS Pages</div>
+                <div class="card-title-es">Cómo corregir errores 404 en Webflow después de publicar o renombrar páginas CMS</div>
+                <div class="card-slug">how-to-fix-webflow-404-errors-after-publishing-or-renaming-cms-pages</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">webflow</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El foro muestra "Website error with broken link" como tema activo. Renombrar slugs del CMS o republicar páginas genera 404s que dañan el SEO y confunden a los usuarios. El blog ya tiene artículos sobre redirects y wildcards, pero no uno específico sobre el troubleshooting de 404s causados por el flujo de publicación de CMS. Este es un dolor muy específico que no está cubierto y que afecta a todos los usuarios que manejan contenido dinámico.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 5 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="5" data-slug="how-to-build-a-multi-step-form-in-webflow-with-working-validation-on-each-step" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#5</span>
+                <span class="card-category">tutorial · webflow</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Build a Multi-Step Form in Webflow With Working Validation on Each Step</div>
+                <div class="card-title-es">Cómo construir un formulario multi-paso en Webflow con validación funcional en cada paso</div>
+                <div class="card-slug">how-to-build-a-multi-step-form-in-webflow-with-working-validation-on-each-step</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">webflow</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El foro tiene un hilo directo: "[Help] Multi Step Form Required Field". Los formularios multi-paso son una de las requests más comunes en la comunidad Webflow, y la implementación nativa no los soporta. El blog ya tiene artículos sobre form validation y dynamic redirects, pero nada que combine ambos en un tutorial práctico paso a paso. El ángulo de "validación en cada paso" es el troubleshooting específico que los usuarios necesitan.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 6 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="6" data-slug="how-to-connect-webflow-forms-to-airtable-for-structured-lead-management" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#6</span>
+                <span class="card-category">tutorial · webflow</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Connect Webflow Forms to Airtable for Structured Lead Management</div>
+                <div class="card-title-es">Cómo conectar formularios de Webflow a Airtable para gestión estructurada de leads</div>
+                <div class="card-slug">how-to-connect-webflow-forms-to-airtable-for-structured-lead-management</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">webflow</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El blog tiene integraciones de formularios con Google Sheets, Notion, HubSpot, Slack, ActiveCampaign, Klaviyo, Pipedrive, AWeber, GetResponse y Kit — pero no Airtable. Es una de las herramientas más populares para gestión de datos y leads. Este tutorial completa la serie de integraciones de formularios y es altamente buscado por equipos de marketing que usan Airtable como base de datos ligera.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 7 (kept from round 1) ═══ -->
+        <div class="proposal-card" data-index="7" data-slug="how-to-set-up-webflow-ecommerce-product-filtering-and-sorting-without-custom-code" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number">#7</span>
+                <span class="card-category">tutorial · webflow</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Set Up Webflow Ecommerce Product Filtering and Sorting Without Custom Code</div>
+                <div class="card-title-es">Cómo configurar filtrado y ordenamiento de productos en Webflow Ecommerce sin código personalizado</div>
+                <div class="card-slug">how-to-set-up-webflow-ecommerce-product-filtering-and-sorting-without-custom-code</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">webflow</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El blog tiene artículos sobre Webflow Ecommerce (checkout fields, payments, cost) pero nada sobre filtrado y ordenamiento de productos. Es una funcionalidad esencial de cualquier tienda online y Webflow Ecommerce la soporta de forma nativa. El blog tiene filtrado CMS genérico (load more, real-time search, A-Z filtering) pero no filtrado específico para productos ecommerce con categorías, precios y atributos. El ángulo "sin código" lo hace accesible para el audience principal del blog.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 8 — NEW ═══ -->
+        <div class="proposal-card" data-index="8" data-slug="how-to-create-a-sticky-header-in-framer-that-shrinks-on-scroll" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number new-badge">#8</span>
+                <span class="card-category">tutorial · framer</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Create a Sticky Header in Framer That Shrinks on Scroll</div>
+                <div class="card-title-es">Cómo crear un header sticky en Framer que se reduzca al hacer scroll</div>
+                <div class="card-slug">how-to-create-a-sticky-header-in-framer-that-shrinks-on-scroll</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El header que se reduce al hacer scroll es el patrón de navegación más usado en sitios modernos de agencias y SaaS. Prácticamente todos los templates de BRIX lo usan. Sin embargo, no existe ningún tutorial en el blog sobre cómo implementarlo en Framer. Es un componente que todo cliente pide, el troubleshooting es real (el header puede saltar, cubrir contenido, o no funcionar en móvil), y el ángulo práctico es indiscutible.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 9 — NEW ═══ -->
+        <div class="proposal-card" data-index="9" data-slug="how-to-add-a-back-to-top-button-in-framer-with-smooth-scroll" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number new-badge">#9</span>
+                <span class="card-category">tutorial · framer</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Add a Back-to-Top Button in Framer With Smooth Scroll</div>
+                <div class="card-title-es">Cómo agregar un botón de "volver arriba" en Framer con scroll suave</div>
+                <div class="card-slug">how-to-add-a-back-to-top-button-in-framer-with-smooth-scroll</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El botón "back to top" es un componente ubicuo en sitios largos — blogs, landing pages, documentación. El blog ya tiene artículos de scroll (layout shift, lazy load, load more) pero nada sobre este componente específico. Es un tutorial perfecto para Framer porque involucra: mostrar/ocultar según posición de scroll, smooth scroll behavior, y posicionamiento fijo. Corto, práctico, y altamente buscado.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
+        </div>
+
+        <!-- ═══ PROPOSAL 10 — NEW ═══ -->
+        <div class="proposal-card" data-index="10" data-slug="how-to-build-an-faq-accordion-in-framer-using-cms-collections" data-status="pendiente">
+            <div class="card-header">
+                <span class="card-number new-badge">#10</span>
+                <span class="card-category">tutorial · framer</span>
+            </div>
+            <div class="card-body">
+                <div class="card-title-en">How to Build an FAQ Accordion in Framer Using CMS Collections</div>
+                <div class="card-title-es">Cómo construir un acordeón de FAQ en Framer usando colecciones CMS</div>
+                <div class="card-slug">how-to-build-an-faq-accordion-in-framer-using-cms-collections</div>
+                <div class="card-meta">
+                    <span class="pill pill-type">tutorial</span>
+                    <span class="pill pill-platform">framer</span>
+                    <span class="pill pill-status realizar-pill">Realizar</span>
+                    <span class="pill pill-status guardar-pill">Guardar</span>
+                    <span class="pill pill-status descartar-pill">Descartada</span>
+                </div>
+                <div class="card-justification">
+                    <strong>Justificación:</strong> El blog ya tiene "How to add FAQ Schema to your Framer site" (schema markup) pero NO cómo construir el componente FAQ en sí. Las FAQs son uno de los componentes más usados en cualquier sitio web y Framer no tiene un componente nativo de accordion conectado al CMS. Este tutorial cubre: crear la colección CMS de preguntas/respuestas, construir el accordion con open/close, y conectarlo con el FAQ Schema que ya está documentado. Es la pieza que falta en el ecosistema de FAQ del blog.
+                </div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razón de rechazo)..."></textarea></div>
         </div>
 
     </div>
 
-    <div class="actions-bar">
-        <div class="actions-status"><strong id="selectedCount">3</strong> of <strong id="totalCount">3</strong> selected</div>
-        <button class="btn-copy-selections" id="btnCopy"><i class="bi bi-clipboard-check"></i> Copy selections</button>
+    <div class="bottom-bar">
+        <div class="bottom-bar-inner">
+            <div class="bottom-bar-row">
+                <div class="bottom-bar-status">
+                    <strong id="realizarCount">0</strong> realizar ·
+                    <strong id="guardarCount">0</strong> guardar ·
+                    <strong id="descartarCount">0</strong> descartar ·
+                    <strong id="pendienteCount">10</strong> sin decidir
+                </div>
+            </div>
+            <div class="bottom-bar-row">
+                <button class="btn-bottom btn-copy-text" id="btnCopyText"><i class="bi bi-clipboard-check"></i> Copiar como texto</button>
+                <button class="btn-bottom btn-copy-link" id="btnCopyLink"><i class="bi bi-link-45deg"></i> Copiar link compatible</button>
+            </div>
+            <div class="bottom-bar-url">file:///Users/andres/BRIX%20Templates/Search%20Agent%20BRIX/WORKSPACE/batch-2026-06-10/proposals.html</div>
+        </div>
     </div>
 
-    <footer>Article Researcher tool — 3 approved articles for BRIX Templates blog · Batch 2026-05-28</footer>
-
-    <script src="https://agents.maurosicard.com/interlinker-ui/script.js"></script>
+    <footer>Article Researcher tool — proposes new topics for the BRIX Templates blog</footer>
 
     <script>
-        (function () {
-            const btn = document.getElementById('btnCopy');
-            if (!btn) return;
+    (function () {
+        'use strict';
 
-            const fresh = btn.cloneNode(true);
-            btn.parentNode.replaceChild(fresh, btn);
+        const cards = document.querySelectorAll('.proposal-card');
+        const filters = document.querySelectorAll('.status-filter');
 
-            fresh.addEventListener('click', function () {
-                const blocks = document.querySelectorAll('.suggestion-block');
-                const approved = [];
-                const rejected = [];
+        function updateCounts() {
+            let counts = { realizar: 0, guardar: 0, descartar: 0, pendiente: 0 };
+            cards.forEach(card => {
+                const status = card.getAttribute('data-status');
+                if (counts[status] !== undefined) counts[status]++;
+            });
+            document.getElementById('countAll').textContent = cards.length;
+            document.getElementById('countRealizar').textContent = counts.realizar;
+            document.getElementById('countGuardar').textContent = counts.guardar;
+            document.getElementById('countDescartar').textContent = counts.descartar;
+            document.getElementById('countPendiente').textContent = counts.pendiente;
+            document.getElementById('realizarCount').textContent = counts.realizar;
+            document.getElementById('guardarCount').textContent = counts.guardar;
+            document.getElementById('descartarCount').textContent = counts.descartar;
+            document.getElementById('pendienteCount').textContent = counts.pendiente;
+        }
 
-                blocks.forEach(block => {
-                    const slug = block.getAttribute('data-slug') || '';
-                    const index = block.getAttribute('data-index') || '';
-                    const checkbox = block.querySelector('.suggestion-checkbox');
-                    const titleEn = (block.querySelector('.proposal-title-en')?.textContent || '').trim();
-                    const titleEs = (block.querySelector('.proposal-title-es')?.textContent || '').trim();
-                    const type = (block.querySelector('.pill-type')?.textContent || '').trim();
-                    const platform = (block.querySelector('.pill-platform')?.textContent || '').trim();
-                    const comment = (block.querySelector('.comment-input')?.value || '').trim();
+        function setCardStatus(card, status) {
+            card.setAttribute('data-status', status);
+            card.querySelectorAll('.btn-action').forEach(btn => btn.classList.remove('selected'));
+            const selectedBtn = card.querySelector('[data-action="' + status + '"]');
+            if (selectedBtn) selectedBtn.classList.add('selected');
+            const comment = card.querySelector('.card-comment');
+            if (status === 'descartar') {
+                comment.classList.add('visible');
+            } else {
+                comment.classList.remove('visible');
+            }
+            updateCounts();
+        }
 
-                    const entry = { index, slug, titleEn, titleEs, type, platform, comment };
-
-                    if (checkbox && checkbox.checked) {
-                        approved.push(entry);
+        cards.forEach(card => {
+            card.querySelectorAll('.btn-action').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const action = this.getAttribute('data-action');
+                    const currentStatus = card.getAttribute('data-status');
+                    if (currentStatus === action) {
+                        setCardStatus(card, 'pendiente');
                     } else {
-                        rejected.push(entry);
+                        setCardStatus(card, action);
                     }
                 });
+            });
+        });
 
-                let out = '';
-                out += '=== APPROVED (' + approved.length + ') ===\n\n';
-                approved.forEach(e => {
-                    out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
-                    out += '  slug:     ' + e.slug + '\n';
-                    out += '  title_en: ' + e.titleEn + '\n';
-                    out += '  title_es: ' + e.titleEs + '\n';
-                    if (e.comment) out += '  comment:  ' + e.comment + '\n';
-                    out += '\n';
-                });
-
-                out += '=== REJECTED (' + rejected.length + ') ===\n\n';
-                rejected.forEach(e => {
-                    out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
-                    out += '  slug:     ' + e.slug + '\n';
-                    out += '  title_en: ' + e.titleEn + '\n';
-                    if (e.comment) out += '  reason:   ' + e.comment + '\n';
-                    else out += '  reason:   rejected by editor\n';
-                    out += '\n';
-                });
-
-                navigator.clipboard.writeText(out).then(() => {
-                    const original = fresh.innerHTML;
-                    fresh.innerHTML = '<i class="bi bi-check2"></i> Copied!';
-                    setTimeout(() => { fresh.innerHTML = original; }, 1500);
-                }).catch(err => {
-                    console.error('Clipboard error:', err);
-                    alert('Could not copy. Output:\n\n' + out);
+        filters.forEach(filter => {
+            filter.addEventListener('click', function () {
+                filters.forEach(f => f.classList.remove('active'));
+                this.classList.add('active');
+                const filterValue = this.getAttribute('data-filter');
+                cards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-status') === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
                 });
             });
-        })();
+        });
+
+        document.querySelectorAll('.card-comment textarea').forEach(ta => {
+            ta.addEventListener('input', function () {
+                this.style.height = 'auto';
+                this.style.height = this.scrollHeight + 'px';
+            });
+        });
+
+        document.getElementById('btnCopyText').addEventListener('click', function () {
+            const realizar = [];
+            const guardar = [];
+            const descartar = [];
+
+            cards.forEach(card => {
+                const slug = card.getAttribute('data-slug') || '';
+                const index = card.getAttribute('data-index') || '';
+                const status = card.getAttribute('data-status');
+                const titleEn = (card.querySelector('.card-title-en')?.textContent || '').trim();
+                const titleEs = (card.querySelector('.card-title-es')?.textContent || '').trim();
+                const type = (card.querySelector('.pill-type')?.textContent || '').trim();
+                const platform = (card.querySelector('.pill-platform')?.textContent || '').trim();
+                const comment = (card.querySelector('.card-comment textarea')?.value || '').trim();
+
+                const entry = { index, slug, titleEn, titleEs, type, platform, comment };
+
+                if (status === 'realizar') realizar.push(entry);
+                else if (status === 'guardar') guardar.push(entry);
+                else if (status === 'descartar') descartar.push(entry);
+            });
+
+            let out = '';
+            out += '=== REALIZAR (' + realizar.length + ') ===\n\n';
+            realizar.forEach(e => {
+                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                out += '  slug:     ' + e.slug + '\n';
+                out += '  title_en: ' + e.titleEn + '\n';
+                out += '  title_es: ' + e.titleEs + '\n';
+                if (e.comment) out += '  comment:  ' + e.comment + '\n';
+                out += '\n';
+            });
+
+            out += '=== GUARDAR LUEGO (' + guardar.length + ') ===\n\n';
+            guardar.forEach(e => {
+                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                out += '  slug:     ' + e.slug + '\n';
+                out += '  title_en: ' + e.titleEn + '\n';
+                out += '  title_es: ' + e.titleEs + '\n';
+                if (e.comment) out += '  comment:  ' + e.comment + '\n';
+                out += '\n';
+            });
+
+            out += '=== DESCARTAR (' + descartar.length + ') ===\n\n';
+            descartar.forEach(e => {
+                out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                out += '  slug:     ' + e.slug + '\n';
+                out += '  title_en: ' + e.titleEn + '\n';
+                if (e.comment) out += '  reason:   ' + e.comment + '\n';
+                else out += '  reason:   rejected by editor\n';
+                out += '\n';
+            });
+
+            const pendientes = document.querySelectorAll('.proposal-card[data-status="pendiente"]').length;
+            if (pendientes > 0) {
+                out += '=== SIN DECIDIR (' + pendientes + ') ===\n';
+            }
+
+            navigator.clipboard.writeText(out).then(() => {
+                const btn = document.getElementById('btnCopyText');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check2"></i> Copiado!';
+                setTimeout(() => { btn.innerHTML = orig; }, 1500);
+            }).catch(err => {
+                console.error('Clipboard error:', err);
+                alert('Could not copy. Output:\n\n' + out);
+            });
+        });
+
+        document.getElementById('btnCopyLink').addEventListener('click', function () {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                const btn = document.getElementById('btnCopyLink');
+                const orig = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check2"></i> Link copiado!';
+                setTimeout(() => { btn.innerHTML = orig; }, 1500);
+            });
+        });
+
+        updateCounts();
+    })();
     </script>
 </body>
 </html>
