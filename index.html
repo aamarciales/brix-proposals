@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Article Proposals | 2026-07-07</title>
+    <title>Article Proposals | 2026-07-14</title>
     <link rel="icon" type="image/svg+xml" href="https://apps.brixtemplates.com/article-builder/assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,6 +113,10 @@
             color: var(--color-gray-600);
         }
         .proposal-card { margin-bottom: 20px; overflow: hidden; transition: var(--transition); }
+        .proposal-section-heading { margin: 38px 0 18px; }
+        .proposal-section-heading:first-of-type { margin-top: 8px; }
+        .proposal-section-heading h2 { margin: 0 0 6px; font-size: 22px; color: var(--color-gray-900); }
+        .proposal-section-heading p { margin: 0; color: var(--color-gray-600); font-size: 14px; }
         .proposal-card[data-status="realizar"] { border-left: 4px solid var(--color-success); }
         .proposal-card[data-status="guardar"] { border-left: 4px solid var(--color-warn); opacity: 0.85; }
         .proposal-card[data-status="descartar"] { border-left: 4px solid var(--color-danger); opacity: 0.5; }
@@ -148,25 +152,22 @@
             padding: 3px 8px;
             border-radius: 4px;
             margin-bottom: 10px;
-            overflow-wrap: anywhere;
         }
         .card-meta { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
         .pill { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: var(--radius-pill); text-transform: capitalize; }
         .pill-type { background: var(--color-gray-100); color: var(--color-gray-700); border: 1px solid var(--color-gray-200); }
         .pill-platform { background: var(--color-accent-200); color: var(--color-accent-dark); }
-        .pill-priority { background: var(--color-success-bg); color: var(--color-success-dark); }
         .pill-status { font-size: 10px; padding: 2px 8px; display: none; }
         [data-status="realizar"] .realizar-pill { display: inline-block; background: var(--color-success-bg); color: var(--color-success-dark); }
         [data-status="guardar"] .guardar-pill { display: inline-block; background: var(--color-warn-bg); color: var(--color-warn-dark); }
         [data-status="descartar"] .descartar-pill { display: inline-block; background: var(--color-danger-bg); color: var(--color-danger-dark); }
-        .card-description, .card-justification, .card-evidence {
+        .card-why {
             font-size: 13px;
             color: var(--color-gray-700);
             line-height: 1.65;
             margin-bottom: 12px;
         }
-        .card-description strong, .card-justification strong, .card-evidence strong { font-weight: 600; color: var(--color-primary); }
-        .card-evidence a { color: var(--color-accent-dark); }
+        .card-why strong { font-weight: 600; color: var(--color-primary); }
         .card-comment { padding: 0 24px; display: none; }
         .card-comment.visible { display: block; padding-bottom: 12px; }
         .card-comment textarea {
@@ -241,13 +242,13 @@
         <img src="https://apps.brixtemplates.com/article-builder/assets/favicon.svg" alt="BRIX Templates" class="logo-icon">
         <div class="logo">Article Researcher</div>
         <div class="logo-divider"></div>
-        <div class="logo-subtext">Strict source-of-truth integrations</div>
+        <div class="logo-subtext">20 propuestas · revisión general y enterprise</div>
     </div></div></div>
 
     <div class="content-area">
         <div class="about-card">
-            <h1>Article Proposals - Batch 2026-07-07</h1>
-            <p class="subtitle">A stricter 10-proposal batch after the enterprise-integration feedback: ideas with real demand, a clear external source of truth, and a realistic Webflow implementation path. The first five are strongest; the rest are included with clearer caveats.</p>
+            <h1>Article Proposals - Batch 2026-07-14</h1>
+            <p class="subtitle">Veinte ideas en una sola revisión: título y una razón breve para decidir si vale la pena producir cada artículo.</p>
             <div class="status-filters">
                 <button class="status-filter active" data-filter="all"><span class="status-dot pendiente"></span> Todas <span class="status-count" id="countAll">0</span></button>
                 <button class="status-filter" data-filter="realizar"><span class="status-dot realizar"></span> Realizar <span class="status-count" id="countRealizar">0</span></button>
@@ -259,27 +260,17 @@
 
         <div class="section-label"><i class="bi bi-search"></i> Proposed Articles</div>
 
-        <div class="proposal-card" data-index="1" data-slug="how-to-connect-google-calendar-events-to-webflow-cms-with-make" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#1</span>
-                <span class="card-category">tutorial · webflow</span>
-            </div>
+        <!-- Repeat this card for each proposal. -->
+        <section class="proposal-section-heading">
+            <h2>Propuestas generales</h2>
+            <p>Oportunidades editoriales nativas para Webflow y Framer.</p>
+        </section>
+
+<div class="proposal-card" data-index="1" data-slug="how-to-stop-form-spam-in-framer-with-native-protection" data-type="troubleshooting" data-platform="framer" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Connect Google Calendar Events to Webflow CMS With Make</div>
-                <div class="card-title-es">Cómo conectar eventos de Google Calendar con el CMS de Webflow usando Make</div>
-                <div class="card-slug">how-to-connect-google-calendar-events-to-webflow-cms-with-make</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">tutorial</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 5/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Show how to use Google Calendar as the events source of truth while Webflow powers a branded events page, with Make handling event sync, recurring-event caveats, fields, filtering, and update checks.</div>
-                <div class="card-description"><strong>Description ES:</strong> Muestra cómo usar Google Calendar como fuente de verdad de eventos mientras Webflow muestra una página de eventos con marca, usando Make para sincronizar eventos, recurrencias, campos, filtros y revisiones.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask about <a href="https://discourse.webflow.com/t/connecting-google-calendar-events-to-a-cms-collection-using-make/277826">Google Calendar events to CMS with Make</a>, <a href="https://discourse.webflow.com/t/google-calendar-repeating-events-into-cms-new-items/194601">recurring events into CMS items</a>, and <a href="https://discourse.webflow.com/t/how-can-i-use-google-calendar-api-in-my-site/241338">using Google Calendar API on a Webflow site</a>. Google documents public calendars and public iCal addresses.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Strongest idea in the batch: direct Webflow demand, clear operational source of truth, safe Make/backend layer, and practical caveats around recurring events, cancellations, timezones, and idempotent CMS updates. Duplicate check: BRIX has add-to-calendar and generic event CMS content, but not Google Calendar as the event source of truth.</div>
+                <div class="card-title-en">How to Stop Form Spam in Framer With Native Basic and Advanced Protection</div>
+                <div class="card-title-es">Cómo detener el spam en formularios de Framer con la protección nativa Basic y Advanced</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> El spam en formularios de Framer es un problema repetido y la plataforma acaba de incorporar protección nativa Basic y Advanced. El artículo ayudaría a elegir y probar la opción correcta sin depender de plugins externos.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -289,27 +280,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="2" data-slug="how-to-build-a-webflow-status-page-from-atlassian-statuspages-public-api" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#2</span>
-                <span class="card-category">tutorial · webflow</span>
-            </div>
+<div class="proposal-card" data-index="2" data-slug="how-to-stop-webflow-form-spam-with-native-bot-blocking" data-type="troubleshooting" data-platform="webflow" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Build a Webflow Status Page From Atlassian Statuspage's Public API</div>
-                <div class="card-title-es">Cómo crear una página de estado en Webflow con la API pública de Atlassian Statuspage</div>
-                <div class="card-slug">how-to-build-a-webflow-status-page-from-atlassian-statuspages-public-api</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">tutorial</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 5/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Explain how SaaS teams can keep Statuspage as the operational source of truth while Webflow displays a branded status page, incident banner, component list, and maintenance notices.</div>
-                <div class="card-description"><strong>Description ES:</strong> Explica cómo equipos SaaS pueden mantener Statuspage como fuente operacional de verdad mientras Webflow muestra una página de estado con marca, banner de incidentes, componentes y mantenimientos.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> A Webflow user asks about creating a <a href="https://discourse.webflow.com/t/creating-changelogs-product-updates/303072">status page and changelog/release notes connected to a system</a>. Statuspage documents incidents, components, maintenance, auth, and rate limits. Public examples expose summary/status/incidents JSON endpoints.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Public operational data becomes branded public site content. The article can teach display-only Webflow rendering, caching, fallback states, and the line between public endpoints and authenticated management APIs. Duplicate check: no Statuspage/Webflow article exists; this is not the rejected Vanta Trust Center idea.</div>
+                <div class="card-title-en">How to Stop Webflow Form Spam With Native Bot Blocking and Spam Filtering</div>
+                <div class="card-title-es">Cómo detener el spam en formularios de Webflow con bloqueo de bots y filtrado nativo</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> El spam en formularios Webflow aparece de forma recurrente y los honeypots aislados no siempre bastan. El artículo explicaría cómo activar y comprobar las defensas nativas sin perder leads legítimos.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -319,27 +294,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="3" data-slug="how-to-keep-webflow-event-pages-in-sync-with-eventbrite-dates" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#3</span>
-                <span class="card-category">troubleshooting · webflow</span>
-            </div>
+<div class="proposal-card" data-index="3" data-slug="how-to-diagnose-hreflang-errors-in-webflow-localization" data-type="troubleshooting" data-platform="webflow" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Keep Webflow Event Pages in Sync With Eventbrite Dates</div>
-                <div class="card-title-es">Cómo mantener páginas de eventos en Webflow sincronizadas con fechas de Eventbrite</div>
-                <div class="card-slug">how-to-keep-webflow-event-pages-in-sync-with-eventbrite-dates</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">troubleshooting</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 4/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Show how to use Eventbrite as the event registration source while Webflow handles the branded event listing, including date changes, upcoming/past states, embeds, CMS fields, and automation limits.</div>
-                <div class="card-description"><strong>Description ES:</strong> Muestra cómo usar Eventbrite como fuente de registro mientras Webflow maneja el listado de eventos con marca, incluyendo cambios de fecha, estados próximos/pasados, embeds, campos CMS y límites de automatización.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask about <a href="https://discourse.webflow.com/t/update-date-field-in-cms-automatically-from-eventbrite/260044">updating CMS date fields from Eventbrite</a>, <a href="https://discourse.webflow.com/t/eventbrite-integration-differentiating-between-upcoming-past-events/107152">showing active versus past Eventbrite events</a>, and <a href="https://discourse.webflow.com/t/eventbrite-embed-not-displaying-the-correct-information/99177">Eventbrite embeds showing incorrect information</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> This is a concrete sync failure, not a generic Eventbrite embed tutorial. The source of truth is Eventbrite; Webflow is the branded display layer; any private credentials stay in Make/Zapier/n8n/serverless. Duplicate check: existing event CMS content does not cover Eventbrite date/state sync.</div>
+                <div class="card-title-en">How to Diagnose Hreflang Errors in Webflow Localization</div>
+                <div class="card-title-es">Cómo diagnosticar errores de hreflang en Webflow Localization</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Los errores de hreflang se repiten en sitios multilingües y una corrección manual mal hecha puede crear más conflictos. El artículo ofrecería un diagnóstico claro usando los controles nativos de Webflow.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -349,27 +308,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="4" data-slug="how-to-turn-a-substack-newsletter-rss-feed-into-a-webflow-archive" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#4</span>
-                <span class="card-category">tutorial · webflow</span>
-            </div>
+<div class="proposal-card" data-index="4" data-slug="how-to-fix-slow-hero-image-lcp-in-webflow" data-type="troubleshooting" data-platform="webflow" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Turn a Substack Newsletter RSS Feed Into a Webflow Archive</div>
-                <div class="card-title-es">Cómo convertir un feed RSS de Substack en un archivo en Webflow</div>
-                <div class="card-slug">how-to-turn-a-substack-newsletter-rss-feed-into-a-webflow-archive</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">tutorial</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 4/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Explain how to use a public newsletter RSS feed as the content source for a branded Webflow archive, with CMS sync, excerpts, canonical links, images, duplicate prevention, and SEO caveats.</div>
-                <div class="card-description"><strong>Description ES:</strong> Explica cómo usar un feed RSS público de newsletter como fuente para un archivo con marca en Webflow, con sincronización CMS, extractos, canonical, imágenes, prevención de duplicados y riesgos SEO.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> A Webflow user asks whether <a href="https://discourse.webflow.com/t/is-there-anyway-i-can-integrate-substack-with-webflow/194433">Substack posts can automatically create Webflow CMS posts</a>. Another thread discusses <a href="https://discourse.webflow.com/t/how-to-sync-an-external-rss-feed-to-webflow-cms/247429">syncing an external RSS feed to Webflow CMS</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Public RSS is a clean source-of-truth pattern with no browser secrets, but the article must stay narrow: newsletter archive, canonical/source links, excerpts versus full content, and dedupe. Duplicate check: BRIX has outbound Webflow RSS coverage, not inbound Substack/RSS to Webflow archive.</div>
+                <div class="card-title-en">How to Fix a Slow Hero Image and Improve LCP in Webflow</div>
+                <div class="card-title-es">Cómo corregir una imagen hero lenta y mejorar el LCP en Webflow</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Las imágenes hero son una causa frecuente de LCP lento en Webflow. El artículo resolvería un problema medible y común con pasos nativos y una comparación antes y después.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -379,27 +322,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="5" data-slug="how-to-import-podcast-rss-episodes-into-webflow-cms-without-losing-enclosures" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#5</span>
-                <span class="card-category">tutorial · webflow</span>
-            </div>
+<div class="proposal-card" data-index="5" data-slug="how-to-add-and-maintain-llms-txt-in-framer" data-type="tutorial" data-platform="framer" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Import Podcast RSS Episodes Into Webflow CMS Without Losing Enclosures</div>
-                <div class="card-title-es">Cómo importar episodios de un RSS de podcast al CMS de Webflow sin perder enclosures</div>
-                <div class="card-slug">how-to-import-podcast-rss-episodes-into-webflow-cms-without-losing-enclosures</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">tutorial</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 4/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Show how to migrate or mirror a podcast RSS feed into a Webflow episode archive while preserving audio URLs, episode dates, show notes, artwork, and canonical source links.</div>
-                <div class="card-description"><strong>Description ES:</strong> Muestra cómo migrar o reflejar un feed RSS de podcast en un archivo de episodios en Webflow conservando audio, fechas, show notes, artwork y enlaces canónicos.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask about <a href="https://discourse.webflow.com/t/importing-podcast-rss-enclosures/213972">importing podcast RSS enclosures</a>, <a href="https://discourse.webflow.com/t/customize-rss-tags-for-podcast/80567">custom podcast RSS tags</a>, <a href="https://discourse.webflow.com/t/integration-of-itunes-for-podcasts-in-webflow/49707">iTunes podcast recognition</a>, and <a href="https://discourse.webflow.com/t/creating-a-podcast-within-the-cms/37947">podcast CMS setup</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Public RSS is a real source of truth, and the article can focus on the hard mapping details: enclosures, artwork, show notes, canonical links, and why audio hosting should stay with the podcast host. Duplicate check: current BRIX video/audio-adjacent posts do not cover podcast RSS into Webflow CMS.</div>
+                <div class="card-title-en">How to Add and Maintain an llms.txt File in Framer</div>
+                <div class="card-title-es">Cómo agregar y mantener un archivo llms.txt en Framer</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> BRIX ya cubre llms.txt en Webflow, pero no en Framer. El artículo cerraría ese vacío con el proceso propio de Framer, sus requisitos de plan y una rutina para mantener el archivo actualizado.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -409,27 +336,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="6" data-slug="how-to-build-a-webflow-directory-from-airtable-without-manual-csv-imports" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#6</span>
-                <span class="card-category">guide · webflow</span>
-            </div>
+<div class="proposal-card" data-index="6" data-slug="how-to-add-content-security-policy-and-security-headers-in-framer" data-type="tutorial" data-platform="framer" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Build a Webflow Directory From Airtable Without Manual CSV Imports</div>
-                <div class="card-title-es">Cómo crear un directorio en Webflow desde Airtable sin importar CSV manualmente</div>
-                <div class="card-slug">how-to-build-a-webflow-directory-from-airtable-without-manual-csv-imports</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">guide</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 4/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Explain how to use Airtable as the operations source for a public directory while Webflow handles SEO-friendly pages, field mapping, staging, and overwrite protection.</div>
-                <div class="card-description"><strong>Description ES:</strong> Explica cómo usar Airtable como fuente operativa para un directorio público mientras Webflow maneja páginas SEO, mapeo de campos, staging y protección contra sobrescrituras.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask about <a href="https://discourse.webflow.com/t/airtable-as-cms-question/168270">Airtable as CMS</a>, <a href="https://discourse.webflow.com/t/airtable-cms-sync/253845">Airtable CMS sync</a>, and <a href="https://discourse.webflow.com/t/posting-data-from-airtable-to-webflow-without-creating-a-cms/210557">posting Airtable data back to Webflow</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> This is included carefully because Airtable can become generic CMS sync. The safe angle is a public directory with approved fields, staging, one-way sync, and overwrite protection. Duplicate check: Airtable appeared in an older test batch, but this version is narrowed around public-directory governance.</div>
+                <div class="card-title-en">How to Add a Content Security Policy and Security Headers in Framer</div>
+                <div class="card-title-es">Cómo agregar una Content Security Policy y cabeceras de seguridad en Framer</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Clientes regulados y auditorías de seguridad pueden exigir CSP y cabeceras HTTP. El artículo mostraría cómo configurarlas gradualmente en Framer sin romper analítica, fuentes o embeds.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -439,27 +350,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="7" data-slug="how-to-use-notion-as-the-editorial-source-for-a-webflow-resource-library" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#7</span>
-                <span class="card-category">guide · webflow</span>
-            </div>
+<div class="proposal-card" data-index="7" data-slug="how-to-build-secure-file-upload-form-in-webflow" data-type="tutorial" data-platform="webflow" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Use Notion as the Editorial Source for a Webflow Resource Library</div>
-                <div class="card-title-es">Cómo usar Notion como fuente editorial para una biblioteca de recursos en Webflow</div>
-                <div class="card-slug">how-to-use-notion-as-the-editorial-source-for-a-webflow-resource-library</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">guide</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 3/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Show when Notion can stay the editorial workspace while Webflow publishes a curated resource library, with field mapping, publish review, sync direction, and private-token boundaries.</div>
-                <div class="card-description"><strong>Description ES:</strong> Muestra cuándo Notion puede ser el espacio editorial mientras Webflow publica una biblioteca de recursos, con mapeo de campos, revisión, dirección de sync y límites de tokens privados.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow threads discuss <a href="https://discourse.webflow.com/t/sync-notion-pages-with-webflow-cms/269240">syncing Notion pages with Webflow CMS</a> and <a href="https://discourse.webflow.com/t/2-way-sync-webflow-cms-and-notion-databases/213007">two-way sync between Webflow CMS and Notion databases</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Lower priority because Notion can become generic sync. The practical article must focus on editorial review, approved public fields, and one-way publishing into a resource library. Duplicate check: existing Notion articles are form-submission destinations, not Notion-to-Webflow publishing.</div>
+                <div class="card-title-en">How to Build a Secure File Upload Form in Webflow</div>
+                <div class="card-title-es">Cómo crear un formulario seguro para subir archivos en Webflow</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Los formularios de empleo y soporte necesitan archivos, pero Webflow combina límites de plan, almacenamiento y dos modelos de acceso. El artículo evitaría errores de privacidad y automatizaciones rotas.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -469,27 +364,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="8" data-slug="how-to-turn-a-public-google-sheet-into-a-webflow-data-table" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#8</span>
-                <span class="card-category">tutorial · webflow</span>
-            </div>
+<div class="proposal-card" data-index="8" data-slug="how-to-use-framer-layout-templates-for-global-headers-footers-sidebars" data-type="tutorial" data-platform="framer" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Turn a Public Google Sheet Into a Webflow Data Table</div>
-                <div class="card-title-es">Cómo convertir una Google Sheet pública en una tabla de datos en Webflow</div>
-                <div class="card-slug">how-to-turn-a-public-google-sheet-into-a-webflow-data-table</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">tutorial</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 3/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Explain how to display public spreadsheet data on a Webflow page without screenshots or manual table rebuilding, including published CSV, caching, formatting, and SEO tradeoffs.</div>
-                <div class="card-description"><strong>Description ES:</strong> Explica cómo mostrar datos públicos de una hoja de cálculo en Webflow sin capturas ni reconstruir tablas manualmente, incluyendo CSV publicado, caché, formato y riesgos SEO.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask about <a href="https://discourse.webflow.com/t/create-listing-of-var-from-a-googlesheet/216194">creating listings from a Google Sheet</a> and <a href="https://discourse.webflow.com/t/pasting-embedding-excel-worksheet-data-table-into-webflow/30413">embedding spreadsheet/table data into Webflow</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Public spreadsheet data can become a public Webflow table, but the article must be honest about SEO, privacy, and large-table limitations. Duplicate check: existing Google Sheets articles cover forms going to Sheets, not Sheets powering public Webflow data.</div>
+                <div class="card-title-en">How to Reuse Global Headers, Footers, and Sidebars With Framer Layout Templates</div>
+                <div class="card-title-es">Cómo reutilizar headers, footers y sidebars globales con Layout Templates de Framer</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Copiar headers y footers página por página genera inconsistencias y mantenimiento manual. El artículo enseñaría a controlar toda la estructura compartida desde una sola plantilla nativa.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -499,27 +378,11 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="9" data-slug="how-to-display-external-api-data-in-webflow-without-hurting-seo" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#9</span>
-                <span class="card-category">troubleshooting · webflow</span>
-            </div>
+<div class="proposal-card" data-index="9" data-slug="how-to-run-webflow-optimize-ab-test-without-invalidating-results" data-type="tutorial" data-platform="webflow" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Display External API Data in Webflow Without Hurting SEO</div>
-                <div class="card-title-es">Cómo mostrar datos de una API externa en Webflow sin dañar el SEO</div>
-                <div class="card-slug">how-to-display-external-api-data-in-webflow-without-hurting-seo</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">troubleshooting</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 3/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Compare client-side fetch, Webflow CMS sync, server-rendered proxy pages, and static rebuild workflows for public API data that needs to be discoverable.</div>
-                <div class="card-description"><strong>Description ES:</strong> Compara fetch en cliente, sync a Webflow CMS, páginas proxy renderizadas en servidor y rebuilds estáticos para datos públicos de API que deben ser indexables.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users ask whether <a href="https://discourse.webflow.com/t/external-rest-api-webflow-good-seo/183162">external REST API data is good for SEO</a>, discuss <a href="https://discourse.webflow.com/t/server-side-rendering-with-webflow/288849">server-side rendering with Webflow</a>, and ask the <a href="https://discourse.webflow.com/t/best-approach-displaying-external-data-from-an-api/268800">best approach for displaying external API data</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> Lower priority because it is broad, but it answers a real architecture problem. The article should compare implementation paths, not teach a generic API integration. Duplicate check: no current article covers external API data architecture and SEO tradeoffs in Webflow.</div>
+                <div class="card-title-en">How to Run a Webflow Optimize A/B Test Without Invalidating the Results</div>
+                <div class="card-title-es">Cómo ejecutar una prueba A/B en Webflow Optimize sin invalidar los resultados</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Editar objetivos, variantes o audiencias durante una prueba puede volver inútiles los resultados. El artículo ayudaría a equipos de growth a ejecutar el experimento correctamente y aplicar una variante ganadora con evidencia válida.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -529,27 +392,156 @@
             <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
         </div>
 
-        <div class="proposal-card" data-index="10" data-slug="how-to-sync-job-postings-to-webflow-cms-without-getting-stuck-in-queued-to-publish" data-status="pendiente">
-            <div class="card-header">
-                <span class="card-number">#10</span>
-                <span class="card-category">troubleshooting · webflow</span>
-            </div>
+<div class="proposal-card" data-index="10" data-slug="how-to-test-roll-back-framer-releases-with-staging-versions" data-type="guide" data-platform="framer" data-status="pendiente">
             <div class="card-body">
-                <div class="card-title-en">How to Sync Job Postings to Webflow CMS Without Getting Stuck in Queued to Publish</div>
-                <div class="card-title-es">Cómo sincronizar vacantes al CMS de Webflow sin que queden atascadas en queued to publish</div>
-                <div class="card-slug">how-to-sync-job-postings-to-webflow-cms-without-getting-stuck-in-queued-to-publish</div>
-                <div class="card-meta">
-                    <span class="pill pill-type">troubleshooting</span>
-                    <span class="pill pill-platform">webflow</span>
-                    <span class="pill pill-priority">Priority 3/5</span>
-                    <span class="pill pill-status realizar-pill">Realizar</span>
-                    <span class="pill pill-status guardar-pill">Guardar</span>
-                    <span class="pill pill-status descartar-pill">Descartada</span>
-                </div>
-                <div class="card-description"><strong>Description EN:</strong> Troubleshoot backend/job-feed syncs that create Webflow CMS career items but fail to publish, including item states, required fields, publish endpoints, retries, and review-safe workflows.</div>
-                <div class="card-description"><strong>Description ES:</strong> Diagnostica syncs backend de vacantes que crean items de carreras en Webflow CMS pero fallan al publicar, incluyendo estados, campos requeridos, endpoints, reintentos y revisión segura.</div>
-                <div class="card-evidence"><strong>Evidence:</strong> Webflow users report <a href="https://discourse.webflow.com/t/webflow-cms-api-job-openings-stuck-in-queued-to-publish-unable-to-publish-live/315924">job openings stuck in queued to publish</a>, ask about <a href="https://discourse.webflow.com/t/best-approach-displaying-external-data-from-an-api/268800">external job/API data on careers pages</a>, and ask about <a href="https://discourse.webflow.com/t/softgarden-integration-help/252808">Softgarden job imports into Webflow</a>.</div>
-                <div class="card-justification"><strong>Justificacion:</strong> This is close to ATS territory, so the safe angle is Webflow CMS/API publish reliability, not another vendor-specific careers article. Duplicate check: does not repeat Lever, Greenhouse, Workable, or Recruitee proposals.</div>
+                <div class="card-title-en">How to Test and Roll Back Framer Releases With Staging and Version Links</div>
+                <div class="card-title-es">Cómo probar y revertir publicaciones de Framer con Staging y enlaces de versión</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Equipos y agencias necesitan aprobar cambios antes de tocar producción y poder volver a una versión estable si algo falla. El artículo aclararía el flujo correcto y la diferencia entre revertir un despliegue y recuperar el proyecto editable.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+        <section class="proposal-section-heading">
+            <h2>Propuestas enterprise: apps y plugins</h2>
+            <p>Flujos para ampliar Webflow o Framer con herramientas de terceros, sin code components en Framer.</p>
+        </section>
+
+<div class="proposal-card" data-index="11" data-slug="how-to-keep-hubspot-new-form-editor-forms-styled-synced-webflow" data-type="troubleshooting" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Keep HubSpot&#x27;s New Form Editor Forms Styled and Synced in Webflow</div>
+                <div class="card-title-es">Cómo mantener estilizados y sincronizados en Webflow los formularios del nuevo editor de HubSpot</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> El nuevo editor de HubSpot permite conservar gobierno CRM y diseño visual en Webflow, pero los cambios estructurales pueden romper estilos o forzar un iframe. El artículo evitaría formularios activos pero visualmente dañados.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="12" data-slug="how-to-sync-figma-design-system-webflow-without-overwriting-components" data-type="guide" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Sync a Figma Design System to Webflow Without Overwriting Production Components</div>
+                <div class="card-title-es">Cómo sincronizar un sistema de diseño de Figma con Webflow sin sobrescribir componentes de producción</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Equipos grandes necesitan llevar tokens y componentes aprobados de Figma a Webflow sin sobrescribir producción. El artículo convertiría la sincronización en un proceso seguro de revisión, conflictos y aprobación.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="13" data-slug="how-to-keep-webflow-campaign-copy-on-brand-with-jasper" data-type="guide" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Keep Webflow Campaign Copy On-Brand With Jasper</div>
+                <div class="card-title-es">Cómo mantener el copy de campañas en Webflow alineado con la marca usando Jasper</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Jasper puede usar voz de marca y conocimiento corporativo dentro de Webflow. El artículo ayudaría a acelerar campañas sin perder consistencia, control de claims ni revisión humana.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="14" data-slug="how-to-send-webflow-pages-enterprise-translation-workflow-phrase" data-type="tutorial" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Send Webflow Pages Through an Enterprise Translation Workflow With Phrase</div>
+                <div class="card-title-es">Cómo enviar páginas de Webflow a un flujo de traducción enterprise con Phrase</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Las empresas necesitan memoria de traducción, glosarios, revisores y estados de aprobación, no solo traducción automática. El artículo mostraría cómo conectar ese flujo profesional con los locales de Webflow.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="15" data-slug="how-to-personalize-webflow-landing-pages-traffic-source-personizely" data-type="tutorial" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Personalize Webflow Landing Pages by Traffic Source With Personizely</div>
+                <div class="card-title-es">Cómo personalizar landing pages de Webflow según la fuente de tráfico con Personizely</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Una sola landing recibe audiencias con contextos distintos. Personizely permitiría adaptar mensajes por fuente, dispositivo o comportamiento sin duplicar páginas, con reglas y medición controladas.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="16" data-slug="how-to-update-legal-product-campaign-copy-webflow-replaceflow" data-type="tutorial" data-platform="webflow" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Update Legal, Product, and Campaign Copy Across Webflow With ReplaceFlow</div>
+                <div class="card-title-es">Cómo actualizar copy legal, de producto y campañas en todo Webflow con ReplaceFlow</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Renombres, disclosures y URLs vencidas pueden aparecer en decenas de páginas y CMS. El artículo enseñaría a encontrarlos, revisar el contexto y reemplazarlos con respaldo y control de cambios.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="17" data-slug="how-to-audit-bulk-edit-large-framer-cms-cms-studio" data-type="guide" data-platform="framer" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Audit and Bulk-Edit a Large Framer CMS With CMS Studio</div>
+                <div class="card-title-es">Cómo auditar y editar masivamente un CMS grande de Framer con CMS Studio</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Editar cientos de items uno por uno no escala. CMS Studio agrega auditoría, vista de hoja de cálculo, diffs y snapshots al CMS de Framer sin APIs, backend ni Code Components.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="18" data-slug="how-to-run-recurring-broken-link-qa-framer-fix-broken-links" data-type="troubleshooting" data-platform="framer" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Run Recurring Broken-Link QA in Framer With Fix Broken Links</div>
+                <div class="card-title-es">Cómo ejecutar controles recurrentes de enlaces rotos en Framer con Fix Broken Links</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Los enlaces se rompen y las revisiones manuales no escalan en sitios grandes. El artículo convertiría el plugin en un control recurrente de release con clasificación, responsables y evidencia.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="19" data-slug="how-to-apply-product-compliance-copy-changes-framer-replacer" data-type="tutorial" data-platform="framer" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Apply Product and Compliance Copy Changes Across Framer With Replacer</div>
+                <div class="card-title-es">Cómo aplicar cambios de copy de producto y cumplimiento en todo Framer con Replacer</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Cambios de producto o cumplimiento deben aplicarse en todo el sitio sin omisiones ni alteraciones accidentales. Replacer permite previsualizar, ejecutar y verificar esos cambios sin Code Components.</div>
+            </div>
+            <div class="card-actions">
+                <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
+                <button class="btn-action btn-guardar" data-action="guardar"><i class="bi bi-clock"></i> Guardar luego</button>
+                <button class="btn-action btn-descartar" data-action="descartar"><i class="bi bi-x-lg"></i> Descartar</button>
+            </div>
+            <div class="card-comment"><textarea rows="1" placeholder="Comentario opcional (ej: razon de rechazo)..."></textarea></div>
+        </div>
+
+<div class="proposal-card" data-index="20" data-slug="how-to-create-prelaunch-seo-qa-gate-framer-seo-audit-plugin" data-type="guide" data-platform="framer" data-status="pendiente">
+            <div class="card-body">
+                <div class="card-title-en">How to Create a Repeatable Pre-Launch SEO QA Gate in Framer With SEO Audit</div>
+                <div class="card-title-es">Cómo crear un control SEO repetible antes de publicar en Framer con SEO Audit</div>
+                <div class="card-why"><strong>Por qué hacerlo:</strong> Equipos y agencias necesitan un criterio repetible antes de publicar. El artículo usaría SEO Audit para detectar bloqueos, verificar hallazgos y generar evidencia de QA sin tratar un score como verdad absoluta.</div>
             </div>
             <div class="card-actions">
                 <button class="btn-action btn-realizar" data-action="realizar"><i class="bi bi-check-lg"></i> Realizar</button>
@@ -574,7 +566,7 @@
                 <button class="btn-bottom btn-copy-text" id="btnCopyText"><i class="bi bi-clipboard-check"></i> Copiar como texto</button>
                 <button class="btn-bottom btn-copy-link" id="btnCopyLink"><i class="bi bi-link-45deg"></i> Copiar link compatible</button>
             </div>
-            <div class="bottom-bar-url">file:///Users/andresmarciales/Documents/Search%20Agent/WORKSPACE/proposals/batch-2026-07-07-realistic-source-of-truth-integrations/proposals.html</div>
+            <div class="bottom-bar-url">https://aamarciales.github.io/brix-proposals/</div>
         </div>
     </div>
 
@@ -652,8 +644,6 @@
                     slug: card.getAttribute('data-slug') || '',
                     titleEn: (card.querySelector('.card-title-en')?.textContent || '').trim(),
                     titleEs: (card.querySelector('.card-title-es')?.textContent || '').trim(),
-                    type: (card.querySelector('.pill-type')?.textContent || '').trim(),
-                    platform: (card.querySelector('.pill-platform')?.textContent || '').trim(),
                     comment: (card.querySelector('.card-comment textarea')?.value || '').trim()
                 });
             });
@@ -662,7 +652,7 @@
             Object.entries({ realizar: 'REALIZAR', guardar: 'GUARDAR LUEGO', descartar: 'DESCARTAR' }).forEach(([key, label]) => {
                 out += '=== ' + label + ' (' + groups[key].length + ') ===\n\n';
                 groups[key].forEach(e => {
-                    out += '#' + e.index + ' [' + e.type + ' / ' + e.platform + ']\n';
+                    out += '#' + e.index + '\n';
                     out += '  slug:     ' + e.slug + '\n';
                     out += '  title_en: ' + e.titleEn + '\n';
                     out += '  title_es: ' + e.titleEs + '\n';
